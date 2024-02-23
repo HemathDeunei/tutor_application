@@ -27,6 +27,18 @@ if($RequestMethod == "POST"){
             while($record = mysqli_fetch_assoc($CheckUserQueryResults)) 
             {
                 $verify = password_verify($password, $record["password"]); 
+                $AccountType = "";
+
+                if($record["user_belongs_group"] == "1"){
+                    $AccountType = "Admin";
+                }else if($record["user_belongs_group"] == "2"){
+                    $AccountType = "Student";
+                }else if($record["user_belongs_group"] == "3"){
+                    $AccountType = "Tutor";
+                }else if($record["user_belongs_group"] == "4"){
+                    $AccountType = "Institute";
+                }
+
 
                 if ($verify) { 
 
@@ -56,6 +68,7 @@ if($RequestMethod == "POST"){
                             'user_id' => $record["id"],
                             'user_name' => $record["username"],
                             'user_email' => $record["email"],
+                            'user_type' => $AccountType,
                             'user_profile_image' => PROFILE . $record["photo"]
                         ];
                     
