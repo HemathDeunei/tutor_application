@@ -1,0 +1,1395 @@
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">	
+	<title>Tutors - Menorah</title>
+	<link rel="icon" type="image/png" sizes="50x50" href ="assets\images\setting_152.png">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="copyright" content="">
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<script src="assets/js/jquery.js"></script>	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>	
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>	
+
+	<style>
+		html{background-color:white;color:black;}
+		::-moz-selection{background:#444444;color:#000000;}
+		::selection{background:#444444;color:#000000;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#000000), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #2fd5e6 #2fd5e6 #2fd5e6;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #2fd5e6 #2fd5e6 #2fd5e6;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #534051;border-bottom:1px solid #534051;}
+
+		#documenter_sidebar, #documenter_sidebar ul a{
+			/*background-color:#534051;*/
+			background-color: #5facc3;
+			color:#ffffff;
+		}
+
+		#documenter_sidebar ul a:hover {
+   			background: #ffffff !important;
+    		color: #14bdee !important;
+    		border-top: 1px solid #14bdee !important;
+    	}
+
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #000000;-moz-text-shadow:1px 1px 0px #000000;text-shadow:1px 1px 0px #000000;}
+		#documenter_sidebar ul{border-top:1px solid #534051;}
+		#documenter_sidebar ul a{border-top:1px solid #ff;border-bottom:1px solid #534051;color:#ffffff;}
+		#documenter_sidebar ul a:hover{background:#dd4b39;color:#000000;border-top:1px solid #dd4b39;}
+		#documenter_sidebar ul a.current{
+			/*background:#dd4b39;*/
+			background: #ffffff;
+			/*color:#000000;*/
+			color:#14bdee;
+			/*border-top:1px solid #dd4b39;*/
+			border-top:1px solid #14bdee;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+
+
+		h1 {
+			color:#14bdee;
+			font-family:Georgia;
+		}
+		h3 {
+			color: #14bdee;
+			font-family:Comic Sans MS;
+		}
+		h6 {
+			font-family:Lucida Sans Unicode;
+		}
+		h5 {
+			color: #14bdee;
+			font-family:Lucida Sans Unicode;
+		}
+		h4 {
+			color: #14bdee;
+		}
+		h6.black{
+			color: #222;
+		}
+
+		h6.blue{
+			color: #1039ce;
+		}
+		h6.paleblue{
+			color: #14bdee;
+		}
+		h5.blue{
+			color: #1039ce !important;
+		}
+
+		.btn-xs {
+			padding: 3px !important;
+		    margin: 1px !important;
+		    font-size: 15px !important;
+		    font-family: -webkit-body !important;
+		}
+
+		
+
+		.btn-default {
+		    color: #fff;
+		    background-color: #10cab8;
+    			border-color: #10cab8;
+		}	
+		.btn-success {
+		    color: #fff;
+		    background-color: #398439;
+    		border-color: #255625;
+		}	
+		.btn-info {
+		    color: #fff;
+		    background-color: #439e96;
+    		border-color: #439e96;
+		}	
+		.btn-warning {
+		    color: #fff;
+		    background-color: #d58512;
+    		border-color: #985f0d;
+		}	
+		.btn-danger {
+		    color: #fff;
+		    background-color: #f5534e;
+    		border-color: #f96964;
+		}	
+
+		.btn-primary {
+		    color: #fff;
+		    background-color: #609fbd !important;
+    		border-color: #4e87b9 !important;
+		}
+		.btn-basic {
+		    color: #fff;
+		    background-color: #609fbd !important;
+    		border-color: #4e87b9 !important;
+		}
+	</style>
+	
+</head>
+<body class="documenter-project-tutor">
+
+	<div id="documenter_sidebar">
+
+		<br><br>
+
+		<a href="#documenter_cover" id="documenter_logo"><img src="assets\images\tut.png"
+		align="center"></a>
+		<ul id="documenter_nav">			
+			<li><a href="#home" title="Home"><font size="25px">Home</font></a></li>	
+			<li><a href="#requirements" title="requirements">Requirements</a></li>	
+			<li><a href="#installation" title="installation">Installation</a></li>
+			<li><a href="#changeUrls" title="changeUrls">Change Images URLs in Pages</a></li>
+			<li><a href="#system_features" title="system_features">System Features</a></li>
+			<li><a href="#administrtator" title="Administrtator">Administrtator</a></li>
+			<li><a href="#users" title="Users">Users</a></li>
+			<li><a href="#institute" title="institute">Institute</a></li>
+			<li><a href="#student" title="student">Student</a></li>
+			<li><a href="#tutor" title="tutor">Tutor</a></li>
+			<li><a href="#institute_tutor" title="institute_tutor">Institute Tutor</a></li>		
+			<li><a href="#technologies_requirement" title="technologies Requirement">Technologies Requirement</a></li>
+			<li><a href="#change_log" title="Change log">Change log</a></li>
+			<li><a href="#new_modules" title="New Modules">New Modules</a></li>
+			<li><a href="#bbb" title="BBB Documentation">BBB</a></li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>						
+		</ul>
+	</div>	
+
+	<div id="documenter_content">	
+
+
+
+	<section id="home">
+	<div class="page-header">
+
+		<h1><center style="background-color:white">Tutors Menorah</center></h1>
+		
+		<div>
+			<p>
+			<h3>Home
+			<span style="float: right;">
+			<a href="#administrtator" title="Admin" class="btn btn-default btn-xs">Admin</a>
+			<a href="#tutor" title="Tutor" class="btn btn-primary btn-xs">Tutor</a>
+			<a href="#student" title="Student" class="btn btn-success btn-xs">Student</a>
+			<a href="#institute" title="Institute" class="btn btn-danger btn-xs">Institute</a>
+			<a href="#institute_tutor" title="Institute Tutor" class="btn btn-info btn-xs">Institute Tutor</a>	
+			<a href="#bbb" title="BBB" class="btn btn-basic btn-xs">BBB</a>
+			<a href="#new_modules" title="New modules" class="btn btn-warning btn-xs">New</a>
+
+			</span>
+			</h3>
+			</p>
+
+		</div>
+
+
+		<hr class="notop">
+	</div>
+
+
+
+	<p> <h6><img src="assets\images\dashboard.png" style="width:100%"> </h6> </p>
+	<br>
+	<br>
+	<h5><b>Tutors Menorah</h5></b>	
+
+	<h6 class="black">Tutors Menorah provides an innovative solution for the Students,Tutors,Institutes and Institute Tutors who like to expose their Requirements and  specifying their platforms for learning or teaching.By using the latest technology, this Tutors Menorah System automates an various operations such as Student Management, Credits System,Time Table Management, Salary Management and Records & Profiles Management. This system is marked by number of features such as news and events, profile search, messages, internal mail, etc.This Tutors Menorah System is available on both modes- Web Application as well as Mobile Application. User friendly interface and highly powerful user experienced design such that anyone with basic knowledge in computer can start this system.</h6>	
+
+	
+	<h5><b>How it Works</b></h5>
+
+	<h6 class="blue"><strong>Registration</strong></h6>
+
+	<h6 class="black">Select the Group Which Do You Belongs, Fill The Registration Form And Click On ‘Register’.After That Activation Key Will Sent To Registered Email.By Clicking On Activation Key, Your Account Will Be Activate. Now You Can Login.</h6>
+
+
+	<h6 class="blue"><strong>Credits System</strong></h6>
+
+	<h6 class="black">Tutors Menorah totally Run by Credit System.Tutors System Facilitates to Book a Course for students by Online using credits.Tutors can contact students by their requirements using credits.Institutes can register its tutors using credits.Its is useful to Students, Tutors and Institutes.</h6>
+
+
+	<h6 class="blue"><strong>Advantage</strong></h6>
+
+	<h6 class="black">Tutors Menorah is very dynamic and very easy to understand, the interface of the website is very easy and anybody can easily work in our website, this website can provide 
+all the details about Students,courses,subjects,event e.t.c. some important information about fresh news & events.</h6>
+
+	<h5><b>Accompany Statistics</h5></b>
+
+	<h6 class="black">In Tutors Menorah you can monitor and control the registered Users , 
+receiving important information such as Total users,total students,total tutors and total institutes 
+for managing the whole process directly from your profile or phone or tablet.</h6>
+
+	<center><img src="assets\images\a2.png" align="center"></center></p>
+	</section>
+
+
+<section id="requirements">
+<div class="page-header"><h3>Requirements</h3><hr class="notop"></div>
+
+<h6>PHP >= 7.0.X</h6>
+
+</section>
+
+<section id="installation">
+<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<h5 class="blue"><strong>THIS IS ONLY FOR NEWS USERS </strong></h5>
+
+<!-- <h6 style="font-family:Lucida Sans Unicode;color:#dd4b39">follow these steps for upgradation:<br></h6> -->
+
+<!-- <h6 style="font-family:Lucida Sans Unicode">
+<ul>
+
+<li>Download the new update from Codecanyon.</li>
+<li>Take backup of already existed project and database in your server.</li>
+<li>Replace <strong>application</strong> folder with the new application folder</li>
+<li>Replace <strong>install </strong>folder with the new install folder</li>
+<li>Replace the DB config file <strong>database.php</strong> file with your back up DB config file ( project/application/config/database.php file ) 
+</li>
+<li>Run the system like this : <strong>http://your-domain.com/welcome</strong></li>
+</ul></h6> -->
+
+
+
+<h5 class="blue">Easy Installation Process : Localhost</h5>
+<h6 class="paleblue">Set up  Tutors  Menorah through the following steps:<br></h6>
+<h6>
+<ul>
+<li>Unzip and copy the script folder in your localhost.</li>
+<li>Run the script path from any web browser. Ex : http://localhost/tutors/install.</li>
+<li>Provide database settings.</li>
+<li>Run the installer.</li>
+</ul>
+</h6>
+<h5 class="blue">Easy Installation Process : Server</h5>
+<h6 class="paleblue">Set up DNS  System through the following steps:<br></h6>
+<h6>
+<ul>
+<li>Unzip and copy the script folder in your root folder.</li>
+<li>Create Database , user, paswword and assign preveilages to user of all database</li>
+<li>Note down the databse name, user name, password.</li>
+<li>Run the script path from any web browser. Ex : http://my-domain/install.</li>
+<li>Provide database settings.</li>
+<li>Run the installer.</li>
+</ul>
+</h6>
+<h6 class="paleblue">After installing, Please remove Install folder in root</h6><br>
+<h5 class="blue"><strong>EXISTING USERS PLEASE CONTACT OUR SUPPORT TEAM </strong></h5>
+<h5 class="blue">Folder contents:</h5>
+<h6>
+<ul>
+<li>Web</li>
+<li>Documentation</li>
+</ul>
+</h6>
+</section>
+
+
+
+<section id="changeURLs">
+<h1> Changing URLs for Images in Pages</h1>
+<p>
+1. Login as Admin
+2. In Left navigation, click on "Pages" > "Dynamic Pages"
+3. Edit the page "How It Works"
+4. In that, in "description" field, click on the "source" which appears in the header of the textarea.
+5. Then find for "http://dev.mindsworthy.com/tutorsci" or "http://10.0.0.14/menorah-tutor-sellingcourses" and replace with your Site URL.
+6. And again click on "source" which appears in the header of the textarea and update the changes.
+7. Same in left navigation, click on "Sections" > "List Sections"
+8. Edit each section/page and follow the steps 4, 5, and 6.
+</p>
+</section>
+
+
+<section id="system_features">
+<div class="page-header"><h3>System Features</h3><hr class="notop"></div>
+
+<h6>
+<p>
+<h5>General:</h5>
+<h6>1.Total Sytem Run by Credit System.<br>
+2. Its is useful to Students, Tutors and Institutes.</h6>
+
+<h5>Students:</h5>
+<h6>
+       1. Tutors System Facilitates to Book a Course  for students by Online.<br>
+
+       2. Students can also under institute offered Batches.<br>
+
+       3. Student can post his requirements, if he not get required tutor in the list. <br>
+
+       4. Simple Procedure to Book Tutors & Institutes.</h6>
+
+<h5>Tutors:</h5>
+<h6>
+        1. Tutors can contact students by their requirements.<br>
+
+        2. Tutors can also register under institutes.<br>
+
+        3. Easy to contact Students & Institutes
+		</h6>
+<h5>Institutes:</h5>
+ <h6> 1. Institutes can register its tutors.<br>
+
+        2. Institutes can create multiple Batches for students.<br>
+
+        3. Students can Enroll in the Batches by online.</h6>
+
+</p></h6>
+</section>
+
+
+
+<section id="administrtator">
+	<div class="page-header"><h3>Administrtator</h3><hr class="notop"></div>
+
+<h4>Admin Furnish</h4>
+<h6>
+Admin will have to authority to add, delete, modify for all 
+ the contents and information including its data used in this Tutors System. 
+ Admin will also be responsible to provide user id to their different users. Admin will have the authority to 
+ add information and provide permission to particular person for accessing particular resources under this system.
+ Every User having seperate Registration and login system so it will giver personla profile for updating and Users can also
+easily get and post their requirements to the administrator directly.
+</h6>
+
+
+<h5><strong style="color:black">Admin Menus</strong></h5>
+
+<p><h6 class="black"><b style="color:#14bdee"> ADMIN DASHBOARD
+</b>- Admin can View and manage all details and settings on his dashboard.<br>
+Administrtator can check new users Information Added on his dashboard.</h6></p><br>
+<img src="assets\images\a1.png" style="width:100%">
+<br><br>
+
+
+<p>
+<h6>
+<b style="color:#14bdee">USERS </b>Users Under Administrtator.
+<ul>
+<li><a href="#users" title="Users"style="color:#1039ce">Users</a></li>
+<li><a href="#student" title="student"style="color:#1039ce">Student</a></li>
+<li><a href="#tutor" title="tutor"style="color:#1039ce">Tutor</a></li>
+<li><a href="#institute_tutor" title="institute_tutor"style="color:#1039ce">Institute Tutor</a></li>
+<li><a href="#institute" title="institute"style="color:#1039ce">Institute</a></li>
+</ul>
+</h6>
+</p>
+
+
+<br>
+<p>
+<h6>
+<b style="color:#14bdee">BOOKINGS </b>
+<br>1.Student Bookings<br>
+Administrtator can view all Students Bookings and he is liable to Modify their detials without ny information.Admin can also easily collect the entire list through two different ways by Exporting into Excel and by taking Print or download to pdf file.<br>
+<img src="assets\images\a3.png" width="100%"><br><br>
+
+<br>
+<b style="color:#14bdee;">2.Institute Batches</b>
+<br>
+Administrtator can find the entire list of institute batches and he can modify the contents in the list.Administrtator is liable to take actions on specific batches.he can filter through specific id's. 
+<br><br>
+<img src="assets\images\a4.png" width="100%">
+</h6>
+</p>
+<br>
+
+
+<p>	
+<h6>
+<b style="color:#14bdee">LEADS</b> 
+<br>
+Leads are the Requirements posted by the Students.if Student needs particular course ,he will post on his dashboard by filling all the fields.so all these leads will be displayed in administrator dashboard.<br>
+<br>
+<img src="assets\images\a5.png"  width="100%">
+<br><br>
+Admin can view leads seperately by closed leads ,opened leads and all leads.
+<br><br>
+<img src="assets\images\a6.png">
+</h6>
+</p>
+<br>
+
+
+
+<p>	
+<h6>
+<b style="color:#14bdee">TUTOR SELLING COURSES</b> 
+<br>
+Admin can view all selling courses of Tutors, and can approve/disapprove.
+<br>
+Which are approved by admin can be reflected in front end and students can purchase.<br><br>
+<img src="assets\images\tsc.png"  width="100%">
+</h6>
+</p>
+<br>
+
+
+<p>	
+<h6>
+<b style="color:#14bdee">TUTOR MONEY REQUESTS</b><br> 
+Tutors should send requests to administrator for obtaining Amount for a Particular course handled by them.once admin get the request from tutor, he will process the payments by checking the course details and students credits.
+<br><br>
+<img src="assets\images\a7.png" width="100%">
+<br>
+</h6>
+</p>
+<br>
+		
+<p>	
+<h6>
+<b style="color:#14bdee">INSTITUTE MONEY REQUESTS </b><br>	
+Registered Institutes should send requests to administrator for obtaining Amount for a Particular course handled by them.once admin get the request from Institute, he will process the payments by checking the course details given by institute.
+<br><br>
+<img src="assets\images\a8.png" width="100%">
+<br>
+</h6>
+</p>
+	
+<br>
+<p>	
+<h6>
+<b style="color:#14bdee">CATEGORIES </b><br>
+Categories are groups of courses.categories will simply used for listing of courses by identifying the code.
+<br><br>
+<img src="assets\images\a10.png" width="100%">
+<br><br>
+
+<li><b style="color:#14bdee;">COURSES</b></li>
+Admin can add courses by selecting catagories and slug given in the catagories list.<br>
+<img src="assets\images\a11.png" width="100%"><br><br>
+Admin can view all course list and he is liable to modify/delete the courses.
+<img src="assets\images\a12.png" width="100%">
+</h6>
+</p>
+
+<br>
+
+<p>	
+<h6>
+<b style="color:#14bdee">OPTIONS</b> <br>
+In options Administrator can list degrees by the way he can only add degree into the database.
+When Users Registering they will select the particular id and title based on their qualifications.
+<br><br>
+<img src="assets\images\a13.png" width="100%">
+<br>
+</h6>
+</p>
+<br>
+	
+<p>	
+<h6>
+<b style="color:#14bdee">LOCATIONS </b><br>
+Administrator adds the loactions and list all loactions.<br><br>
+<img src="assets\images\a14.png" width="100%">
+</h6>
+</p>
+
+<br>
+		
+<p>	
+<h6>
+<b style="color:#14bdee">PACKAGES</b> <br>
+Package contains no of credits selling for particular institute or student or tutor.These credits can be used for different purposes.<br>
+<img src="assets\images\a15.png" width="100%">
+</h6>
+</p>		
+
+
+<br>
+<p><h6><b style="color:#14bdee">CERTIFICATES</b> <br>certificates are used for valuating the fake registrations into the system.users should produce certificates during registration to avoid illegal registrations.administrator will check and he is liable to delete user from the system.<br> 
+<img src="assets\images\a16.png" width="100%"></h6></p>
+
+
+<br>
+<p><h6><b style="color:#14bdee">PAGES</b> <br>
+Admin can edit the content of pages like About Us,How It works.
+<br>
+Admin can create number of dynamic pages, which reflects in front end. <br><br>
+<img src="assets\images\p1.png" width="100%">
+</h6>
+</p>
+
+<br>
+
+<p><h6><b style="color:#14bdee">SECTIONS</b> <br>
+Admin can edit the content of sections Advantages,Are you a teacher,Featured on.
+<br><br>
+<img src="assets\images\sec1.png" width="100%"><br>
+<img src="assets\images\sec2.png" width="100%"><br>
+
+</h6>
+</p>
+
+<br>
+
+<p>	<h6><b style="color:#14bdee">SETTINGS</b> <br><br>
+ Admin can only handle all Settings.these settings will reflect in front-end</p>
+<img src="assets\images\set1.png" width="100%"><br><br>
+
+
+<p>Site Settings - which reflects in total site</p>
+<img src="assets\images\set1.png" width="100%"><br><br>
+
+
+
+
+<p>
+<h6>
+
+<b style="color:#14bdee">LANGUAGE SETTINGS</b><br> Admin can add and update new languages.
+after adding new language admin should add phrases to reflect for users.<br>
+<br>
+<img src="assets\images\a18.png" width="100%"><br><br>
+
+Admin can add,edit,delete phrases.<br><br>
+<img src="assets\images\phr.png" width="100%"><br><br>
+
+
+Admin can add,edit,delete phrases.<br><br>
+<img src="assets\images\upl.png" width="100%"><br><br>
+</h6>
+</p>
+
+
+
+
+<p style="font-family:Lucida Sans Unicode;">
+<h6><b style="color:#14bdee">EMAIL TEMPLATES</b>- Admin will set the format for sendings mail to users when new registration and forgot password issues occour.</h6>
+<img src="assets\images\em1.png" width="100%"> 
+</p>
+
+<p>	
+<h6>
+<b style="color:#14bdee">TEAM</b><br>
+<img src="assets\images\a19.png" width="100%"> 
+<br>
+</h6>
+
+
+
+
+
+<h6>
+<b style="color:#14bdee">PAYMENTS</b> <br>
+Admin can view all payments of Tutors, Students and Institutes of Package purchases,Course purchases etc.
+<br><br>
+<img src="assets\images\pay1.png" width="100%"> <br>
+
+<p>Admin can view pending payments i.e. If users pay through "Manual" then it comes to pending payment, whenever admin receives payments offline, then he can update here.</p>
+<img src="assets\images\pay2.png" width="100%"> <br>
+
+</h6>
+</p>
+<br>
+
+
+</section>
+
+
+
+<section id="users">
+	<div class="page-header">
+		<h3>Users</h3><hr class="notop">
+	</div>
+
+<p><h2 style="color:#14bdee">Tutors Menorah Users</h2></p>
+
+<h6>
+
+<ul style="font-family:Lucida Sans Unicode;color:#dd4b39">
+<li><a href="#institute" title="institute" style="color:#1039ce"><u><strong>Institute</strong></u></a><br></li>
+
+Institute is designed  to automate the management process of an institute from student to 
+Tutor, from course management to schedule management, from human resource employment to salary management.<br>
+Institutes can register its tutors.<br>
+Institutes can create multiple Batches for students.<br>
+Students can Enroll in the Batches by online.
+
+<li><a href="#student" title="student" style="color:#1039ce"><strong><u>Student</u></strong></a></li>
+		
+Tutors Menorah Provides an innovative solution for students .It provides an automated system which makes user interface easy to understand.<br>
+Tutors System Facilitates to Book a Course for students by Online.<br>
+Students can also under institute offered Batches.<br>
+Student can post his requirements, if he not get required tutor in the list. <br>
+Simple Procedure to Book Tutors & Institutes.
+
+
+<li><a href="#tutor" title="tutor" style="color:#1039ce"><strong><u>Tutor</u></strong></a></li>
+It provides an effective information about all student details and Institute details. Tutors can contact students by their requirements. Tutors can also register under institutes. Easy to contact Students & Institutes and using this system administrators and management can easily manage all information.<br>
+Tutors can contact students by their requirements.
+Tutors can also register under institutes.<br>
+Easy to contact Students & Institutes.
+
+
+<li><a href="#institute_tutor" title="institute_tutor" style="color:#1039ce"><strong><u>Institute Tutor</u></strong></a></li>
+Institute Tutors have seperate login and registration system and profiles.Tutor Menorah provides an effective information about all batch details and Institute details.<br>
+Institute Tutors can contact students through Institute only.<br>
+Institute Tutors can only register under institutes. 
+</ul>
+</h6>
+</section>
+
+
+
+
+
+<section id="institute">
+<div class="page-header"><h3>Institute</h3><hr class="notop"></div>	
+
+<h6>Institute is designed  to automate the management process of an institute from student to 
+Tutor, from course management to schedule management, from human resource employment to salary management.
+<br>
+Innovative ‘Search bar’ enables any layman user to use the system in seconds of login.
+User friendly interface and highly powerful user experienced design such that anyone with basic knowledge in computer can
+ start using the system with minimum training .Easy to learn and easy to master
+<li>Steep learning curve</li>
+<li>Displays latest news on dashboard</li>
+</h6>
+
+
+
+<h5>Institute Dashboard</h5>
+
+<img src="assets\images\i1.png" width="100%">
+
+<h5>Institute Menu</h5>
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">Menu is a set of options presented to the user of a computer application to help the user find information or 
+execute a program function.</p></h6>
+
+
+<img src="assets\images\i2.png" >
+
+<h5>Enrolled Students List</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute is designed  to automate the Enrolled Students in an ordered format.
+Institute manages enrolled students list and can check all details of courses,tutor name,fee,time slot and actions.</p></h6>
+
+
+<img src="assets\images\i0.png" width="100%"><br>
+
+<h5>Manage --> Courses</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">
+Institute can view all courses in Home --> manage--> courses.Institute can update offering
+courses and these courses will be visible to students once updated.
+This course is the study of a particular topic within a wider subject area and is the basic building block of a qualification.</p></h6><br>
+
+<img src="assets\images\i3.png" ><br>
+
+
+<h5>Manage --> Locations</h5>
+
+
+<h6><p>Institute can update locations by choosing in Home --> Manage-->Locations.so students 
+can easily chose available loactions for particular course.</p>
+</h6>
+
+
+<img src="assets\images\i4.png" ><br>
+
+<h5><p>Manage --> Teaching Type</p></h5>
+
+
+<h6>
+	<p style="font-family:Lucida Sans Unicode;">
+	Home --> Manage -->Teaching Type, institute should choose options and update.</p> </h6>
+	<br>
+
+	<img src="assets\images\i5.png" ><br>
+
+	<h5>Manage --> Tutors </h5>	
+
+	<h6><p style="font-family:Lucida Sans Unicode;">
+	Home --> Manage -->Tutors, institute can add new tutors and Institute find all list of tutors with all details and institute
+	is liable to modify tutors at any time.</p> </h6>
+	<br>
+	<img src="assets\images\i6.png" ><br>
+
+
+<h5><p>Manage --> Batches</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">
+	Home --> Manage -->Batches, institute can add new batches an find all list of batches with all details and
+	institute is liable to modify batches at any time.</p> </h6><br>
+	<img src="assets\images\i7.png" >
+
+
+	
+<h5><p>Manage --> Certificates</p></h6></h5>
+<h6 style="font-family:Lucida Sans Unicode;"><p>
+	Home --> Manage -->Certificates, institute should upload all releveant certificates to admin verification.</h6></p><br>
+	<img src="assets\images\i8.png" >
+
+
+<h5><p>Manage --> Privacy</p></h5>
+<h6 style="font-family:Lucida Sans Unicode;"><p>
+	Home --> Manage -->Privacy, institute update Privacy for students visibility.</h6></p><br>
+	<img src="assets\images\i9.png" >
+<h5 style="font-family:Lucida Sans Unicode; color:#14bdee">Packages</h5>
+
+
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">A package is a grouping of related types providing all list of credits 
+details and various plans</p></h6>
+
+
+
+<h5>Packages --> List Packages</h5>
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">for viewing student leads institute needs some credits.so institute should
+buy credits by choosing from the list.  </p></h6><br>
+<img src="assets\images\i10.png" >
+
+
+<h5>Packages --> My Subscriptions</h5>
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">
+Institute can check all his subscriptions on his dashboard.  </p></h6><br>
+<img src="assets\images\i11.png" >
+
+
+
+<h5>Money Conversion Request</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute have all the details of money Requests.Institute seperately 
+find the lists of payment status -Pending</p></h6><br>
+<img src="assets\images\i12.png" ><br>
+
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute have all the details of money Requests.Institute seperately 
+find the lists of payment status -Done</p></h6><br>
+<img src="assets\images\i13.png" ><br>
+
+
+
+<h5>Credits Transaction history</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">Institute can check all list of Transaction history and they also can
+easily export into excel sheet or pdf files.</p></h6><br>
+<img src="assets\images\i14.png" ><br>
+
+
+<h5>Account</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">
+Account is the customization of all details related to Institute.
+</p></h6>
+<img src="assets\images\i15.png" ><br>
+</section>	
+
+
+
+
+	
+<section id="student">
+<div class="page-header"><h3>Student</h3><hr class="notop"></div>
+
+<h6><p>Tutors Menorah Provides an innovative solution for students .It provides an effective information about course details or credits details and bookings e.t.c. 
+and using this system administrators and management can easily manage all information, Credit fee,certificates,fee payments, e.t.c.Tutors Menorah provides seperate registration and login system for every student and the dashboard of student as:</p></h6>
+<img src="assets\images\s1.png" width="100%">
+<br>
+
+
+<h4>Bookings</h4>
+
+
+<h6><p style="font-family:Lucida Sans Unicode;">Student Total Bookings will display here.</p></h6>
+<img src="assets\images\s2.png" width="100%"><br>
+
+
+
+<h6><ul style="font-family:Lucida Sans Unicode"><li><b>Pending:</b><br>After A New Booking Status,admin or tutor should accept your request.</li>
+<li><b>Approved:</b><br>If Tutor Accepts Your Booking Shows This Status.</li>
+<li><b> Session Initiate:</b><br>Tutor Will Initiate The Session Before Starting Of The Course(This Button Will Be Visible Before Starting The Course Set By Admin).</li>
+<li><b>Start Course:</b><br> After Tutor Changed Status To In Session Initiate  This Is Enabled In Student.</li>
+<li><b> Running:</b><br>If Student Clicks On Start Course The Session Will Starts.</li>
+<li><b>Completed:</b><br>If Course Completed Updates To This Session.	</li>
+<li><b>  Claim For Admin Intervention:</b><br>This Is Status Can Be Updated After Starting The Course , If Student Not Interested ,Then He Can Change, Later Admin Resolve This Issue.</li>
+<li><b>Cancelled:</b><br>Student May Cancel The Bookings Before Starting Course, Then He Will Be Refunded. Once After Starting The Course He Cancelled No Refund Is Available.</li>
+</ul></h6>
+
+
+
+<h4>Enrolled Courses</h4>
+
+<h6><p style="font-family:Lucida Sans Unicode;">All Course Enrolled In the Institutes Will Display Here.</p></h6>
+<img src="assets\images\s3.png" width="100%"><br>
+
+
+<h4>My Leads</h4>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Leads are the requirements posted by the students and these requirements are visible to tutors and institutes.
+<h6><p style="font-family:Lucida Sans Unicode;"><b>Post Requirement</b><br></p></h6>
+<h6><p style="font-family:Lucida Sans Unicode;">Student Can Post their Requirement details Here.[All The Posted Requirements Are Show In Leads].</p></h6>
+</p></h6>
+<img src="assets\images\s5.png" width="100%"><br>
+
+
+<h6><p style="font-family:Lucida Sans Unicode;"><b>Leads</b><br></p></h6>
+
+<h6><p style="font-family:Lucida Sans Unicode;">All The Posted Requirements Are Show In Leads.</p></h6></p></h6>
+<img src="assets\images\s6.png" width="100%"><br>
+
+
+<h4>Manage</h4>
+
+<h5>Manage --> Courses</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">
+Student can view all courses in Home --> manage--> courses.Student can update Required
+courses and these courses will be visible to tutors and institutes once updated.
+This course is the study of a particular topic within a wider subject area and is the basic building block of a qualification.</p></h6><br>
+<img src="assets\images\s4.png" width="100%"><br>
+
+
+
+<h5><p>Manage --> Locations</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Student can update locations by choosing in Home --> Manage-->Locations.so tutors can easily get the loactions for providing particular course.</p></h6>
+<img src="assets\images\s7.png" width="100%"><br>
+
+
+<h5><p>Manage -->Preffered Teaching Type</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Home --> Manage -->Preffered Teaching Type, student should choose options and update.</p> </h6><br>
+<img src="assets\images\s8.png"	 width="100%"><br>
+	
+<h5><p>Manage --> Certificates</p></h6></h5>
+
+
+<h6><p>Home --> Manage -->Certificates, student should upload all releveant certificates for admin verification.</h6></p><br><img src="assets\images\s9.png" width="100%">
+	
+
+<h5><p>Manage --> Privacy</p></h5>
+
+<h6><p>Home --> Manage -->Privacy, institute update Privacy for students visibility.</h6></p><br>
+<img src="assets\images\s10.png" width="100%">
+	
+
+<h5>Packages</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">A package is a grouping of related types providing all list of credits details and various plans</p></h6>
+
+
+<h5>Packages --> List Packages</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">for buying courses and sending messag to institute or to tutors,student needs some credits.
+so student should buy credits by choosing from the list.  </p></h6><br>
+<img src="assets\images\s11.png" width="100%">
+
+
+<h5>Packages --> My Subscriptions</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">
+student can check all his subscriptions on his dashboard.  </p></h6><br>
+<img src="assets\images\s12.png" width="100%">
+
+
+
+<h5>Credits Transaction history</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute can check all list of Transaction history and they also can easily export into excel sheet or pdf files.</p></h6><br>
+<img src="assets\images\s13.png" width="100%"><br>
+
+
+<h5>Account</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">Account is the personalize of all options.</p></h6>
+<img src="assets\images\i15.png" ><br>
+</section>
+	
+
+
+	
+<section id="tutor">
+<div class="page-header">
+<h3>Tutor</h3><hr class="notop">
+</div>	
+
+<h6><p>Tutors Menorah Provides an innovative solution for Tutors .It provides an effective 
+information about all student details and Institute details.Tutors can contact students by their requirements.Tutors can also register under institutes.Easy to contact Students & Institutes 
+and using this system administrators and management can easily manage all information, Credits system,certificates,fee payments, e.t.c.Tutors Menorah provides seperate registration and login system for every tutors and the dashboard of tutor as:</p></h6>
+<img src="assets\images\tt1.png" width="100%">
+<br>
+
+
+<h4>Bookings</h4>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Tutors Total Bookings will display here.</p></h6>
+<img src="assets\images\tt2.png" width="100%"><br>
+
+
+<h6><ul style="font-family:Lucida Sans Unicode">
+<li><b>All:</b><br>All Booking Details Of Particular Tutor Display Here.</li>
+<li><b>Pending:</b><br> New Booking By Students Display Here. If Approve Booking That Booking Status Change To Approved.</li>
+<li><b>Approved:</b><br>Approved Bookings Display Here.</li>
+<li><b> Session Initiate:</b><br>Tutor Will Initiate The Session Before Starting Of The Course(This Button Will Be Visible Before Starting The Course Set By Admin)</li>
+<li><b>Start Course:</b><br> After Tutor Changed Status To In Session Initiate  This Is Enabled In Student.</li>
+<li><b> Running:</b><br>If Student Clicks On Start Course The Session Will Starts.</li>
+<li><b>Completed:</b><br> If Course Completed Updates To This Session. After Completion Of Session Tutor Need Request Admin For Money Conversion Of Credits.</li>
+<li><b>  Claim For Admin Intervention:</b><br>This Is Status Can Be Updated After Starting The Course , If Tutor Not Interested ,Then He Can Change, Later Admin Resolve This Issue.</li>
+<li><b>Cancelled:</b><br> Tutor May Cancel The Bookings Before Starting Course.</li>
+</ul>
+</h6>
+
+
+	
+<h4>Manage</h4>
+
+<h5>Manage --> Courses</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">
+Student can view all courses in Home --> manage--> courses.tutor can update offering courses.
+This course is the study of a particular topic within a wider subject area and is the basic building block of a qualification.</p></h6><br>
+<img src="assets\images\tt3.png" width="100%"><br>
+
+
+<h5><p>Manage --> Locations</p></h5>
+<h6><p style="font-family:Lucida Sans Unicode;">Tutor can update locations by choosing in Home --> Manage-->Locations.so that Students can easily get the loactions for getting course.</p>
+</h6>
+<img src="assets\images\tt8.png" width="100%"><br>
+
+
+<h5><p>Manage --> Teaching Type</p></h5>
+<h6><p style="font-family:Lucida Sans Unicode;">Home --> Manage --> Teaching Type, tutor should choose options and update.</p> </h6>
+<br>
+<img src="assets\images\tt4.png"  width="100%"><br>
+
+	
+<h5><p>Manage --> Certificates</p></h6></h5>
+<h6><p>
+Home --> Manage -->Certificates, tutor should upload all releveant certificates for admin verification.</h6></p><br>
+<img src="assets\images\s9.png"  width="100%">
+	
+
+<h5><p>Manage --> Privacy</p></h5>
+<h6><p>
+Home --> Manage -->Privacy, tutor update his own Privacy.</h6></p><br>
+<img src="assets\images\s10.png"  width="100%">
+	
+
+<h5>Packages</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">A package is a grouping of related types providing all list of credits 
+details and various plans</p></h6>
+
+
+<h5>Locations</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Tutor can add locations if his desired locations not found in admin provided locations, which can be approved/disapproved by admin.  </p></h6><br>
+<img src="assets\images\l1.png"  width="100%">
+
+<h5>Courses</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Tutor can add courses if his desired courses not found in admin provided courses, which can be approved/disapproved by admin.  </p></h6><br>
+<img src="assets\images\c1.png"  width="100%">
+
+
+
+<h5>Packages --> List Packages</h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">for viewing student details and sending messag to institute or to students,tutor needs some credits.
+so tutors should buy credits by choosing from the list.  </p></h6><br>
+<img src="assets\images\tt5.png"  width="100%">
+
+
+
+
+<h5>Packages --> My Subscriptions</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">
+tutor can check all his subscriptions on his dashboard.  </p></h6><br>
+<img src="assets\images\tt6.png" width="100%">
+
+
+<h5>Credits Transaction history</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">tutor can check all his Transaction list history and they also can
+easily export into excel sheet or pdf files.</p></h6><br>
+<img src="assets\images\tt7.png" width="100%"><br>
+
+
+<h5>Account</h5>
+<h6><p style="font-family:Lucida Sans Unicode;">
+Account is the personalize of all options.
+</p></h6>
+<img src="assets\images\i15.png" ><br>
+</section>
+
+
+
+<section id="institute_tutor">
+<div class="page-header">
+	<h3>Institute Tutor</h3><hr class="notop">
+</div>		
+
+<h6><p>Institute Tutors have seperate login and registration system and profiles.Tutor Menorah provides an effective information about all batche details and Institute details.
+Institute Tutors can contact students through Institute only.Institute Tutors can only register under institutes. </p></h6>
+
+
+<h5><p>Dashboard</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute Tutor can access on his dashboard.</p>
+<img src="assets\images\it1.png" width="100%"></h6><br>
+
+<h5><p>Batches</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute Tutor find batch details for certain course.</p>
+
+<img src="assets\images\it2.png" width="100%"><br>
+</h6>
+
+<h5><p>Account</p></h5>
+
+<h6><p style="font-family:Lucida Sans Unicode;">Institute Tutor can seperately personalize his profile.</p>
+<img src="assets\images\it3.png"><br>
+</section>	
+
+
+
+<section id="technologies_requirement">
+<div class="page-header">
+	<h3>Technologies Requirement</h3><hr class="notop"></div>
+	<h4>Technologies Used for Web Application</h4>
+	<p><h4>Front End</h4></p>
+	
+	<ul>
+	<h6>	
+		<li><strong style="color:#14bdee"> CSS </strong></li>
+		<p style="font-family:Lucida Sans Unicode;">A CSS (cascading style sheet) file allows you to separate your web sites (X)HTML content from it’s style. As always you use your (X)HTML file to arrange the content, but all of the presentation (fonts, colors, background, borders, text formatting, link effects & so on…) are accomplished within a CSS.</p>	
+			
+		<li><strong style="color:#14bdee"> HTML </strong></li>
+		<p style="font-family:Lucida Sans Unicode;">HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS), and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.[1] Web browsers receive HTML documents from a webserver or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
+		</p>
+
+
+        <li><strong style="color:#14bdee"> JAVA SCRIPT </strong></li>
+		<p style="font-family:Lucida Sans Unicode;">JavaScript is most commonly used as a client side scripting language. This means that JavaScript code is written into an HTML page. When a user requests an HTML page with JavaScript in it, the script is sent to the browser and it's up to the browser to do something with it.</p>	
+	
+
+		<li><strong style="color:#14bdee"> BOOTSTRAP </strong></li>
+		<p style="font-family:Lucida Sans Unicode;">Bootstrap is a powerful front-end framework for faster and easier web development. It includes HTML and CSS based design templates for common user interface components like Typography, Forms, Buttons, Tables, Navigations, Dropdowns, Alerts, Modals, Tabs, Accordion, Carousel and many other as well as optional JavaScript extensions.Bootstrap also gives you ability to create responsive layout with much less efforts.</p>
+
+
+
+		<li><strong style="color:#14bdee"> JQUERY </strong></li>
+		<p style="font-family:Lucida Sans Unicode;">jQuery is a lightweight, "write less, do more", JavaScript library.
+
+		The purpose of jQuery is to make it much easier to use JavaScript on your website.
+
+		jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+
+		jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+		The jQuery library contains the following features:
+
+		HTML/DOM manipulation
+		CSS manipulation
+		HTML event methods
+		Effects and animations
+		AJAX
+		Utilities
+		</p>
+
+
+		<li><strong style="color:#14bdee"> AJAX </strong></li>
+			<p style="font-family:Lucida Sans Unicode;">AJAX = Asynchronous JavaScript And XML.
+
+			AJAX is not a programming language.
+
+			AJAX just uses a combination of:
+
+			A browser built-in XMLHttpRequest object (to request data from a web server)
+			JavaScript and HTML DOM (to display or use the data)
+			AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+			</p>
+			
+			
+		</ul>
+
+
+<p><h4>Back End</h4></p>
+	
+	<ul>
+	<li><h6><strong style="color:#14bdee">CODE IGNITER 3.X</strong></li></h6>
+		
+		<h6><p style="font-family:Lucida Sans Unicode;">CodeIgniter is an application development framework, which can be used to develop websites, using PHP. It is an Open Source framework. It has a very rich set of functionality, which will increase the speed of website development work.
+		By using CodeIgniter, you will save a lot of time, if you are developing a website from scratch. Not only that, a website built in CodeIgniter is secure too, as it has the ability to prevent various attacks that take place through websites.
+		</p></h6>
+	
+
+	<p><h4>Data Base</h4></p>
+	
+	<li>
+		<h6><strong style="color:#14bdee">My SQL</strong></li></h6>
+
+		<h6><p style="font-family:Lucida Sans Unicode;">MySQL is a freely available open source Relational Database Management System (RDBMS) that uses Structured Query Language (SQL).
+		SQL is the most popular language for adding, accessing and managing content in a database. It is most noted for its quick processing, proven reliability, ease and flexibility of use.
+		</p>
+		</h6>
+
+	</ul>
+</section>
+
+
+
+
+<section id="change_log">
+	
+	<div class="page-header"><h3>Change log</h3><hr class="notop"></div>
+
+	<table class="table table-bordered" style="box-sizing: border-box; border-spacing: 0px; border-collapse: collapse; width: 1038px; max-width: 100%; margin-bottom: 20px; border-style: solid; border-color: rgb(221, 221, 221); color: rgb(99, 108, 121); font-family: Roboto, sans-serif; font-size: 14px;">
+		<thead style="box-sizing: border-box;">
+		<tr style="box-sizing: border-box;">
+			<th style="box-sizing: border-box; padding: 8px; text-align: left; line-height: 1.42857; vertical-align: bottom; border-top: 0px; border-bottom: 2px solid rgb(221, 221, 221); border-right-style: solid; border-left-style: solid; border-right-color: rgb(221, 221, 221); border-left-color: rgb(221, 221, 221);" width="60">
+				S.No.</th>
+			<th style="box-sizing: border-box; padding: 8px; text-align: left; line-height: 1.42857; vertical-align: bottom; border-top: 0px; border-bottom: 2px solid rgb(221, 221, 221); border-right-style: solid; border-left-style: solid; border-right-color: rgb(221, 221, 221); border-left-color: rgb(221, 221, 221);">
+				Change Date</th>
+			<th style="box-sizing: border-box; padding: 8px; text-align: left; line-height: 1.42857; vertical-align: bottom; border-top: 0px; border-bottom: 2px solid rgb(221, 221, 221); border-right-style: solid; border-left-style: solid; border-right-color: rgb(221, 221, 221); border-left-color: rgb(221, 221, 221);">
+				Versions</th>
+		</tr>
+	</thead>
+	<tbody style="box-sizing: border-box;">
+		<tr style="box-sizing: border-box;">
+			<th style="box-sizing: border-box; padding: 8px; text-align: left; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				1</th>
+			<td style="box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				January, 2017</td>
+			<td style="box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				version 1.0</td>
+		</tr>
+
+
+		<tr style="box-sizing: border-box;">
+			<th style="box-sizing: border-box; padding: 8px; text-align: left; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				2</th>
+			<td style="box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				December, 2018</td>
+			<td style="box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; border-style: solid; border-color: rgb(221, 221, 221);">
+				version 2.0</td>
+		</tr>
+	</tbody>
+</table>
+<p>
+	&nbsp;</p>
+</section>
+
+
+
+<section id="new_modules">
+	
+	<div class="page-header"><h3>New Modules</h3><hr class="notop"></div>
+
+	<ul>
+
+		<li><h6><strong style="color:#14bdee">Site theme has changed</strong></h6>
+		<h6>Created beautiful effects by adding one more CSS to existing version.</h6>
+		<img src="assets\images\n1.png" width="100%"><br>
+		</li>
+
+		<li><h6><strong style="color:#14bdee">Social logins for student</strong></h6>
+		<h6>Facebook (SSL need for facebook login), Google plus logins for student.</h6>
+		<img src="assets\images\n2.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Create new Admin user</strong></h6>
+		<h6>Admin can create new admin user, the new admin user have all the rights of Admin.</h6>
+		<img src="assets\images\n3.png" width="100%"><br>
+		</li>
+
+		<li><h6><strong style="color:#14bdee">Tutor Blogs</strong></h6>
+		<h6>Tutor approved blogs are reflects in front end .</h6>
+		<img src="assets\images\n4.png" width="100%"><br>
+		</li>
+			
+
+		<li><h6><strong style="color:#14bdee">Admin get notifications</strong></h6>
+		<img src="assets\images\n5.png" width="100%"><br>
+		<h6>New Student, Tutor, Institute Registration.</h6>
+		<h6>When tutor add new course.</h6>
+		<h6>When tutor add new location.</h6>
+		<h6>When student book course and change booking status.</h6>
+		<h6>When tutor change booking status.</h6>
+		<h6>Institute new Batch creation.</h6>
+		<!-- h<6>When student give review to tutor.</h6> -->
+		<h6>When student post a lead.</h6>
+		<h6>When tutor post his selling course.</h6>
+		<h6>When tutor publish his blog.</h6>
+		<h6>Tutor money request to admin.</h6>
+		<h6>Institute money request to admin.</h6>
+		<h6>When student enrolled with new Course or Institute.</h6>
+		<h6>When student purchase a package.</h6>
+		<h6>When student purchase a course.</h6>
+		</li>
+
+
+
+		<li><h6><strong style="color:#14bdee">Import modules data feature</strong></h6>
+		<h6>Admin can import data for modules of Users,Categories,Options,Locations,Packages,Certificates .</h6>
+		<img src="assets\images\n6.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Tutor provide certificate to student</strong></h6>
+		<h6>Tutor give certificates of participation or completion, once student have completed the course. It can be downloaded via student profile.</h6>
+
+		<img src="assets\images\n9.png" width="100%"><br>
+
+		<img src="assets\images\n7.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Added category for selling courses in tutor</strong></h6>
+		<h6>Tutor can select category of particular selling course when adding selling course.</h6>
+		<img src="assets\images\n8.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Tutor Locations</strong></h6>
+		<h6>Tutor can add locations, if his desired location is not available in Admin provided locations,then admin can approve/disapprove .</h6>
+		<img src="assets\images\l1.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Tutor Courses</strong></h6>
+		<h6>Tutor can add courses, if his desired course is not available in Admin provided courses,then admin can approve/disapprove .</h6>
+		<img src="assets\images\c1.png" width="100%"><br>
+		</li>
+
+
+		<li><h6><strong style="color:#14bdee">Generate Contact Map and update in System Settings</strong></h6>
+		<h6><strong>You can generate google map code <a href="https://www.embedgooglemap.net/" target="_blank">Here!</a> </strong></h6>
+		<img src="assets\images\gm.png" width="100%"><br><br>
+		<img src="assets\images\sys.png" width="100%"><br><br>
+		</li>
+
+
+
+		<li><h6><strong style="color:#14bdee">Email Notifications</strong></h6>
+		<h6>Admin can add dynamic content in email templates.</h6>
+		<h6>All Users recieves respective email notification if important actions occur.</h6>
+		<img src="assets\images\em2.png" width="100%"><br>
+		<h6>Student, Tutor, Institute Registration.</h6>
+		<h6>Forgot Password.</h6>
+		<h6>When Student make Booking.</h6>
+		<h6>When student change booking status.</h6>
+		<h6>When tutor change booking status Approved,Session Intiated etc.</h6>
+		<h6>Enrollment Request from Student to Institute.</h6>
+		<h6>Batch Approved Alert To Tutor Email.</h6>
+		<h6>Batch Session Initiated Alert To Students Email.</h6>
+		<h6>Course Completed for the Batch Alert To Students Email.</h6>
+		<h6>Conatct Query Email.</h6>
+		<h6>Send Message Email.</h6>
+		<h6>Send App Download Link Email.</h6>
+		<h6>Social Registration.</h6>
+		<h6>Package Subscription to User.</h6>
+		<h6>Package Subscription to Admin.</h6>
+		<h6>Payment Received email to User.</h6>
+		<h6>Student Purchased Course mail to Student.</h6>
+		<h6>Student Purchased Course mail to Tutor.</h6>
+		<h6>Student Purchased Course mail to Admin.</h6>
+		</li>
+	</ul>
+</section>
+
+
+<section id="bbb">
+	
+	<div class="page-header"><h3>BBB</h3><hr class="notop"></div>
+
+	<ul>
+		<li><h6><strong style="color:#14bdee">Admin has to set BBB Server details in Settings.</strong></h6>
+		<h6>In Settings -> Bigbluebutton</h6>
+		<img src="assets\images\b1.png" width="100%"><br>
+
+		<h6>Bigbluebutton settings</h6>
+		<img src="assets\images\b2.png" width="100%"><br><br>
+
+		<p>Tutor can set his preferred teaching types, which reflects at the time of student make booking.</p>
+		<img src="assets\images\b7.png" width="100%"><br>
+
+		<p>When student make a booking , If he select preferred location is "online BBB" then those are virtual classes (run through BBB).</p>
+		<img src="assets\images\b6.png" width="100%"><br><br>
+
+		<p>Admin can set minutes in System Settings, in order to enable BBB in Tutors->Bookings.</p>
+		<p>If Booking class is there today, at 4pm-5pm, if admin set <b>Enable Initiate Session Option Before Minutes </b> as 30 minutes, at 3:30pm Initiate session option will be enabled in Tutors->Booking.
+		</p>
+		<img src="assets\images\b4.png" width="100%"><br>
+		<br>
+
+			
+		<p>Tutor-->Bookings</p>
+		<img src="assets\images\b8.png" width="100%"><br><br>
+
+		<p>Tutor can Initiate session now.</p>
+		<img src="assets\images\b9.png" width="100%"><br>
+
+		<p>Once Tutor Initiated sessoin, BBB cloud icon enabled in bookings, Tutor can click on it start Virtual class.</p>
+		<img src="assets\images\b10.png" width="100%"><br><br>
+
+
+		<p>Tutor join in class</p>
+		<img src="assets\images\b11.png" width="100%"><br>
+
+		<p>When Tutor Initates session, BBB cloud icon reflects in Student--> booking</p>
+		<img src="assets\images\b12.png" width="100%"><br><br>
+
+
+		<p>Student can join in virtual class, by click on cloud icon.</p>
+		<img src="assets\images\b13.png" width="100%"><br><br>
+
+		</li>
+
+
+
+	</ul>
+
+</section>
+
+
+
+
+
+<section id="sources_and_credits">
+	<div class="page-header"><h3>Sources and Credits</h3><hr class="notop"></div>
+<h6 style="font-family:Lucida Sans Unicode;">
+	* CodeIgniter 3.x (https://codeigniter.com/)</h6>
+<h6 style="font-family:Lucida Sans Unicode;">
+	* My SQL (https://www.mysql.com/)</h6>
+<h6 style="font-family:Lucida Sans Unicode;">
+	* Bootstrap v3.3.6 (http://getbootstrap.com), Copyright 2011-2014 Twitter, Inc. 
+	Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)</h6>
+<h6 style="font-family:Lucida Sans Unicode;">
+	* Font Awesome: License: SIL OFL 1.1, http://scripts.sil.org/OFL</h6>
+</section>
+
+
+
+
+	</div>
+</body>
+</html>
