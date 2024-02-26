@@ -2456,7 +2456,7 @@ class Student extends MY_Controller
 			
 			'success_url' => base_url() . 'payment/razorpay_success',
 			'cancel_url' => base_url() . 'payment/razorpay_failed',
-			'failed_url' => base_url() . 'payment/razorpay_success',
+			'failed_url' => base_url() . 'payment/razorpay_failed',
 		);
 		$this->data['razorpay'] = $config;
 		
