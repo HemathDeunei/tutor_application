@@ -40,6 +40,7 @@
 				<div class="sign-block signin-left">
 					<h2><span><?php echo get_languageword('Sign In');?></span> <?php echo get_languageword('With Your Account');?></h2>
 					
+					<span class="error"><?php echo $message;?></span>
 					<?php 
 					$attrs = array(
 					'name' => 'token_form',
@@ -77,7 +78,21 @@
 						</div>
 
 
-				
+						<div class="input-group ">
+							<ul class="login-user-details list-unstyled">
+	                          <li onclick="setCredentials('admin')" class=""><a class="positive" href="javascript:void(0);">Admin</a></li>
+	                          <li onclick="setCredentials('tutor')" class=""><a class="positive" href="javascript:void(0);">Tutor</a></li>
+	                          <li onclick="setCredentials('student')" class=""><a class="positive" href="javascript:void(0);">Student</a></li>
+	                          <li onclick="setCredentials('institute')" class=""><a class="positive" href="javascript:void(0);">Institute</a></li>
+	                        </ul>
+						</div>
+						<div class="input-group ">
+							<ul class="login-user-details list-unstyled">
+	                          	<li onclick="setCredentials('institute_tutor')" class=""><a class="positive" href="javascript:void(0);">Institute Tutor</a></li>
+	                          	<li><a class="positive" href="<?php echo SITEURL;?>Documentation/" target="_blank">Documentation</a></li>
+	                        </ul>
+						</div>
+
 						<!-- <button class="btn-link-dark signin-btn center-block" type="submit" name="btnLogin"><?php echo get_languageword('Sign In');?></button> -->
 
 						<button class="btn-link-dark center-block" type="submit" name="btnLogin"><?php echo get_languageword('Sign In');?></button>

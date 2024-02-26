@@ -1,5 +1,18 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/**
+* Name:  Ion Auth Lang - English
+*
+* Author: Ben Edmunds
+*         ben.edmunds@gmail.com
+*         @benedmunds
+*
+* Location: http://github.com/benedmunds/ion_auth/
+*
+* Created:  03.14.2010
+*
+* Description:  English language file for Ion Auth messages and errors
+*
+*/
 
 // Account Creation
 $lang['account_creation_successful']            = 'Account Successfully Created';
@@ -22,7 +35,7 @@ $lang['activate_successful']                 = 'Account Activated';
 $lang['activate_unsuccessful']               = 'Unable to Activate Account';
 $lang['deactivate_successful']               = 'Account De-Activated';
 $lang['deactivate_unsuccessful']             = 'Unable to De-Activate Account';
-$lang['activation_email_successful']         = 'Account Successfully Created';
+$lang['activation_email_successful']         = 'Account Successfully Created and Activation Email Sent';
 $lang['activation_email_unsuccessful']       = 'Unable to Send Activation Email';
 
 // Login / Logout

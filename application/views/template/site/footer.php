@@ -27,7 +27,120 @@
                 else
                     $col_size = 9;
             ?>
-       
+        <div class="row row-margin">
+            <?php if(!empty($activemenu) && $activemenu == "home") echo $this->session->flashdata('message'); ?>
+            <div class="col-lg-<?php echo $col_size;?> col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h4 class="footer-head"><?php echo get_languageword('Get to Know Us');?></h4>
+                        <ul class="footer-links">
+                            <li><a href="<?php echo URL_HOME_ABOUT_US; ?>"><?php echo get_languageword('About Us');?></a></li>
+                            <li><a href="<?php echo URL_VIEW_TERMS_AND_CONDITIONS; ?>"><?php echo get_languageword('terms_And_Conditons');?></a></li>
+                            <?php if(!$this->ion_auth->logged_in()  || !$this->ion_auth->is_tutor() ){
+                                if(!$this->ion_auth->is_institute()){ ?>
+                            <li><a href="<?php echo URL_HOME_SEARCH_TUTOR; ?>"><?php echo get_languageword('Search for a Tutor');?></a></li><?php } } ?>
+                            <?php if(!$this->ion_auth->logged_in()  || !($this->ion_auth->is_student() || is_inst_tutor($this->ion_auth->get_user_id()))){ ?>
+                            <li><a href="<?php echo URL_HOME_SEARCH_STUDENT_LEADS; ?>"><?php echo get_languageword('Search for a Student');?></a></li><?php } ?>
+                            <?php if(!$this->ion_auth->logged_in()){ ?>
+                            <li><a href="<?php echo URL_AUTH_LOGIN; ?>"><?php echo get_languageword('Become a Tutor');?></a></li><?php } ?>
+                            <li><a href="<?php echo URL_HOME_CONTACT_US; ?>"><?php echo get_languageword('Contact Us');?></a></li>
+
+                            <!--blogs link-->
+                            <li><a href="<?php echo URL_HOME_LIST_BLOGS; ?>"><?php echo get_languageword('Tutor_Blogs');?></a></li>
+                        </ul>
+                    </div>
+
+                    <?php
+                            $locations = $this->home_model->get_locations(array('child' => true, 'limit' => 7));
+                            if(!empty($locations)) {
+                    ?>
+                    <div class="col-sm-3">
+                        <h4 class="footer-head"><?php echo get_languageword('tutors by location');?></h4>
+                        <ul class="footer-links">
+                            <?php foreach ($locations as $row) { ?>
+                            <li title="<?php echo $row->location_name; ?>"><a href="<?php echo URL_HOME_SEARCH_TUTOR.'/by-location/'.$row->slug; ?>"> <?php echo $row->location_name; ?> </a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php } ?>
+
+                    <?php
+                            $courses = $this->home_model->get_courses(array('limit' => 7));
+                            if(!empty($courses)) {
+                    ?>
+                    <div class="col-sm-3">
+                        <h4 class="footer-head"><?php echo get_languageword('tutors by course');?></h4>
+                        <ul class="footer-links">
+                            <?php foreach ($courses as $row) { ?>
+                            <li title="<?php echo $row->name; ?>"><a href="<?php echo URL_HOME_SEARCH_TUTOR.'/'.$row->slug;?>"> <?php echo $row->name; ?> </a></li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                    <?php } ?>
+
+                    <?php
+                    if((isset($this->config->item('site_settings')->show_team) && $this->config->item('site_settings')->show_team == 'Yes')) {
+                    $team =  $this->base_model->fetch_records_from('team', array('status' => 'Active'), '*', 'name', '', 0, 3);
+                    if(!empty($team))
+                    {
+                    ?>
+                    <div class="col-sm-3">
+                        <h4 class="footer-head"><?php echo get_languageword('meet the team');?></h4>
+                        <?php foreach($team as $t) { ?>
+                        <div class="media media-team">
+                            <!--<a href="#">-->
+                                <figure class="imghvr-zoom-in">
+                                    <img class="media-object  img-circle" src="<?php echo URL_PUBLIC_UPLOADS2;?>team/<?php echo $t->image?>" alt="...">
+                                    <figcaption></figcaption>
+                                </figure>
+                                <h4><?php echo $t->name;?></h4>
+                                <p><u><?php echo $t->position;?></u></p>
+                                <!--</a>-->
+                        </div>
+                        <?php } ?>
+                        </div>
+                    <?php }
+                    } ?>
+                </div>
+            </div>
+            <?php
+            if(strip_tags($this->config->item('site_settings')->get_app_section) == "On") {
+
+            if((isset($this->config->item('site_settings')->androd_app) && $this->config->item('site_settings')->androd_app != '') || (isset($this->config->item('site_settings')->ios_app) && $this->config->item('site_settings')->ios_app != '')) { ?>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <h4 class="footer-color-head"><?php echo get_languageword('Find a tutor fast');?>. <span><?php echo get_languageword('Get our app');?></span>.</h4>
+                <p class="footer-text"><?php echo get_languageword('Send a download link to your mail');?>.</p>
+                <div class="footer-newsletter">
+                    <?php echo form_open('/', 'id="send_app_link_form" class="newsletter-form"'); ?>
+                        <div class="input-group "  id="emailtext">
+                            <input type="email" class="form-control" value="<?php echo set_value('mailid'); ?>" placeholder="<?php echo get_languageword('your_Email'); ?>" name="mailid" id="mailid" required="required" />
+                            <span class="input-group-btn">
+                                    <button class="btn newsletter-btn" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                </span>
+                        </div>
+                        <?php echo form_error('mailid'); ?>
+                    <?php echo form_close(); ?>
+                </div>
+
+                <div class="footer-appdownload">
+                    <hr class="footer-hr hidden-xs">
+                    <?php if(isset($this->config->item('site_settings')->ios_app) && $this->config->item('site_settings')->ios_app != '') { ?>
+                    <a href="<?php echo $this->config->item('site_settings')->ios_app?>" target="_blank"><img src="<?php echo URL_FRONT_IMAGES;?>icn-istore.png" alt="IOS app link"> <?php echo get_languageword('Apple Store');?></a>
+                    <?php } ?>
+
+                    <?php if(isset($this->config->item('site_settings')->androd_app) && $this->config->item('site_settings')->androd_app != '') { ?>
+                    <a href="<?php echo $this->config->item('site_settings')->androd_app?>" target="_blank"><img src="<?php echo URL_FRONT_IMAGES;?>icn-playstore.png" alt="Android app link"><?php echo get_languageword('Google Play');?></a>
+                    <?php } ?>
+                </div>
+            </div>
+            <?php } } ?>
+
+            <div class="col-lg-3 footer_col">
+            <div class="widget-logo"><a href="https://codecanyon.net/item/menorahtutor-tutor-directory-mobile-app/20807493?s_rank=12" target="_blank" title="Get tutors app"><img src="<?php echo URL_FRONT_IMAGES;?>widget-logo.png" alt="Tutors app" /></a></div>
+            </div>
+
+
+        </div>
         <?php } ?>
         <?php if(strip_tags($this->config->item('site_settings')->primary_footer_section) == "On") { ?>
         <div class="row footer-copy-bar">
@@ -35,7 +148,21 @@
                 <hr class="footer-hr">
 
                 <?php if(isset($this->config->item('site_settings')->designed_by) && $this->config->item('site_settings')->designed_by != '') { ?>
-              
+                <span class="copy-right pull-right">
+                    <?php
+                            echo "<span class='design-by'>".get_languageword('designed_by')."</span> ";
+                            if(isset($this->config->item('site_settings')->url_designed_by) && $this->config->item('site_settings')->url_designed_by != '')
+                                echo '<a target="_blank" href="'.$this->config->item('site_settings')->url_designed_by.'">'.$this->config->item('site_settings')->designed_by.'</a>';
+                            else
+                                echo $this->config->item('site_settings')->designed_by;
+                    ?> &nbsp; &nbsp;
+                    <?php if(isset($this->config->item('site_settings')->rights_reserved_by) && $this->config->item('site_settings')->rights_reserved_by != '') {
+                        echo "<span class='design-by'>".$this->config->item('site_settings')->rights_reserved_by."</span>";
+                    }
+                    ?>
+
+
+                </span>
                 <?php } ?>
 
 
