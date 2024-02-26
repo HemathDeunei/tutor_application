@@ -24,7 +24,7 @@ class Database {
 	// Function to create the tables and fill them with the default data
 	function create_tables($data)
 	{
-		die($data);
+		// die($data);
 		// Connect to the database
 		$mysqli = new mysqli($data['hostname'],$data['username'],$data['password'],$data['database']);
 
