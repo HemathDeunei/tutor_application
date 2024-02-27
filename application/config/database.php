@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => 'localhost',
+	'username' => 'deuneic1_siteadmin',
+	'password' => 'admin@3112',
+	'database' => 'deuneic1_tutor',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'pre_',
 	'pconnect' => FALSE,

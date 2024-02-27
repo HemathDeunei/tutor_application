@@ -97,7 +97,7 @@ class Requests_Transport_cURL implements Requests_Transport {
 			curl_setopt($this->fp, CURLOPT_FILE, $this->stream_handle);
 		}
 
-		if (isset($options['verify'])) {
+		/*if (isset($options['verify'])) {
 			if ($options['verify'] === false) {
 				curl_setopt($this->fp, CURLOPT_SSL_VERIFYHOST, 0);
 				curl_setopt($this->fp, CURLOPT_SSL_VERIFYPEER, 0);
@@ -109,8 +109,10 @@ class Requests_Transport_cURL implements Requests_Transport {
 
 		if (isset($options['verifyname']) && $options['verifyname'] === false) {
 			curl_setopt($this->fp, CURLOPT_SSL_VERIFYHOST, 0);
-		}
-
+		}*/
+        curl_setopt($this->handle, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt($this->handle, CURLOPT_SSL_VERIFYPEER, 0);
+        
 		$response = curl_exec($this->fp);
 
 		$options['hooks']->dispatch('curl.after_send', array(&$fake_headers));
