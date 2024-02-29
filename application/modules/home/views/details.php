@@ -38,34 +38,7 @@
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-					<div class="send-quote-block">
-						<h2 class="heading-line">Ask me a question:</h2>
-						<form class="form-quote" action="#" method="post">
-							<div class="input-group">
-								<input type="text" class="form-control" name="Name" placeholder="Name" required="">
-							</div>
-							<div class="dark-picker">
-								<select class="select-picker ">
-									<option selected="" disabled="" value="">Mediation</option>
-									<option value="AL1">Mediation1</option>
-									<option value="AL2">Mediation2</option>
-									<option value="AL3">Mediation3</option>
-									<option value="AL4">Mediation4</option>
-								</select>
-							</div>
-							<div class="input-group">
-								<input type="email" class="form-control" name="Last-name" placeholder="Email" required="">
-							</div>
-							<div class="input-group">
-								<input type="text" class="form-control" name="Address" placeholder="Phone" required="">
-							</div>
-							<div class="input-group ">
-								<textarea rows="3" placeholder="My question is ..."></textarea>
-							</div>
-							<p>We will never sell or rent your private info.</p>
-							<button type="submit" class="btn-link-dark">Send Question</button>
-						</form>
-					</div>
+				
 				</div>
 			</div>
 		</div>
