@@ -852,9 +852,7 @@ class Auth extends MY_Controller {
 			$this->form_validation->set_rules('first_name',$lbl_name,'required');
 
 			 $this->form_validation->set_rules('last_name',get_languageword('last_name'),'xss_clean');
-			 $this->form_validation->set_rules('pin_code',get_languageword('pin_code'),'xss_clean');
-			 $this->form_validation->set_rules('phone_code',get_languageword('phone_code'),'required');
-			 $this->form_validation->set_rules('phone',get_languageword('phone'),'required');
+	
 						
 			if($identity_column !== 'email')
 			{

@@ -400,9 +400,7 @@ class Tutor extends MY_Controller
 		{
 			$this->form_validation->set_rules('city', get_languageword('City'), 'trim|required|xss_clean');
 			$this->form_validation->set_rules('land_mark', get_languageword('land_mark'), 'trim|required|xss_clean');			
-			$this->form_validation->set_rules('country', get_languageword('country'), 'trim|required|xss_clean');
-			$this->form_validation->set_rules('pin_code', get_languageword('pin_code'), 'trim|required|xss_clean');
-			$this->form_validation->set_rules('phone', get_languageword('phone'), 'trim|required|xss_clean');
+			
 			
 			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 			
