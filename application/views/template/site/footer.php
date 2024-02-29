@@ -470,11 +470,7 @@ $(document).ready(function () {
     });
 </script>
 
-<?php
-if($this->config->item('seo_settings')->google_analytics) {
-    echo $this->config->item('seo_settings')->google_analytics;
-}
-?>
+
 
 </body>
 
