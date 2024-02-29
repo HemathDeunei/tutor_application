@@ -84,9 +84,9 @@
                             if($this->ion_auth->is_student()) {
                     ?>
                         <li><a class="<?php if(isset($activemenu) && $activemenu == "search_tutor") echo 'active'; ?>" href="<?php echo URL_HOME_SEARCH_TUTOR;?>"> <?php echo get_languageword('Find Tutor');?> </a></li>
-                        <li><a class="<?php if(isset($activemenu) && $activemenu == "search_institute") echo 'active'; ?>" href="<?php echo URL_HOME_SEARCH_INSTITUTE;?>"> <?php echo get_languageword('Find Institute');?> </a></li>
+                     
                     <?php } else if(($this->ion_auth->is_tutor() || $this->ion_auth->is_institute()) && !is_inst_tutor($user_id)) { ?>
-                        <li><a class="<?php if(isset($activemenu) && $activemenu == "search_student_leads") echo 'active'; ?>" href="<?php echo URL_HOME_SEARCH_STUDENT_LEADS;?>" title="<?php echo get_languageword('find_student_leads'); ?>"> <?php echo get_languageword('Find Leads');?> </a></li>
+                      
                     <?php } } ?>
 
 
