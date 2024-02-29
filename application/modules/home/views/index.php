@@ -134,57 +134,7 @@
     <?php } ?>
     <!-- Ends Lession-cards #homepage -->
 
-    <!-- How-it-works #homepage -->
-    <?php $about_us_how_it_works = $this->base_model->get_page_how_it_works(); 
-
-        if(!empty($about_us_how_it_works)) {
-
-            echo $about_us_how_it_works[0]->description;
-        }
-    ?>
-    <!-- Ends How-it-works #homepage -->
-
-    <!-- Testimonial slider -->
-    <div class="container" id='testimonials'>
-        <div class="row row-margin">
-            <div class="col-sm-12 ">
-                <h2 class="heading"><?php echo get_languageword('Why Students');?> <span><?php echo get_languageword('Love Us');?></span></h2>
-            </div>
-            <div class="col-sm-12">
-                <div class="testimonial-slider owl-theme">
-                    <?php foreach($site_testimonials as $row) {?>
-                    <div class=" item">
-                        <div class="feedback-block">
-                            <div class="comment">
-                                <h4>“</h4>
-                                <p><?php echo $row->comments;?></p>
-                            </div>
-                            
-                                <div class="profile-block">
-                                    <div class="media-left">
-                                        <div class="profile-img">
-                                            <img src="<?php if(isset($row->image)) echo  URL_PUBLIC_UPLOADS_TESTIMONIALS.'/'. $row->image;?>" alt=".." class="img-circle">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-
-                                        <h4><?php echo $row->name;?></h4>
-                                        <p><?php echo $row->position;?></p>
-                                    </div>
-                                </div>
-                            
-                        </div>
-                    </div>
-                    <?php } ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Ends Testimonial slider -->
-
-    <!-- Counter #Homepage -->
-    <?php $this->load->view('lesson_count.php'); ?>
-    <!-- Counter #Homepage -->
+   
 
     <?php if(!empty($home_tutor_ratings)) {?>
      <section class="weekly-top-rated">
