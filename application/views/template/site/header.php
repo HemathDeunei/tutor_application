@@ -107,7 +107,7 @@
                     <?php } ?>
 
                     <?php if(!($this->ion_auth->is_tutor() || $this->ion_auth->is_institute() || $this->ion_auth->is_admin())) { ?>
-                    <li><a class="<?php if(isset($activemenu) && $activemenu == "buy_courses") echo 'active'; ?>" href="<?php echo URL_HOME_BUY_COURSES;?>"> <?php echo get_languageword('Buy_Courses');?> </a></li>
+                  
                     <?php } ?>
 
                     <?php if (!$this->ion_auth->logged_in()) { ?>
