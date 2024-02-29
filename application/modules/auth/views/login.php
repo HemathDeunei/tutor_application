@@ -73,24 +73,9 @@
 							);
 							echo form_password($attributes);?>
 						</div>
-						<div class="check">
-							<a href="<?php echo URL_AUTH_FORGOT_PASSWORD;?>" class="forgot-pass"> <?php echo get_languageword('Forgot your password?');?></a>
-						</div>
+					
 
-
-						<div class="input-group ">
-							<ul class="login-user-details list-unstyled">
-	                          <li onclick="setCredentials('admin')" class=""><a class="positive" href="javascript:void(0);">Admin</a></li>
-	                          <li onclick="setCredentials('tutor')" class=""><a class="positive" href="javascript:void(0);">Tutor</a></li>
-	                          <li onclick="setCredentials('student')" class=""><a class="positive" href="javascript:void(0);">Student</a></li>
-	                          <li onclick="setCredentials('institute')" class=""><a class="positive" href="javascript:void(0);">Institute</a></li>
-	                        </ul>
-						</div>
-						<div class="input-group ">
-							<ul class="login-user-details list-unstyled">
-	                          	<li onclick="setCredentials('institute_tutor')" class=""><a class="positive" href="javascript:void(0);">Institute Tutor</a></li>
-	                          	<li><a class="positive" href="<?php echo SITEURL;?>Documentation/" target="_blank">Documentation</a></li>
-	                        </ul>
+				
 						</div>
 
 						<!-- <button class="btn-link-dark signin-btn center-block" type="submit" name="btnLogin"><?php echo get_languageword('Sign In');?></button> -->
@@ -236,7 +221,7 @@
 						</div>
 						
 						
-						<div class="input-group ">
+						<!-- <div class="input-group ">
 							<label><?php echo get_languageword('pin_code');?></label>
 							<?php 
 							$attributes = array(
@@ -247,10 +232,10 @@
 							'class' => 'form-control',
 							);
 							echo form_input($attributes);?>
-						</div>
+						</div> -->
 
 						
-						<div class="input-group ">
+						<!-- <div class="input-group ">
 							<label><?php echo get_languageword('Phone Number');?><?php echo required_symbol();?></label>
 							<div class="row">
 	    						<div class="col-sm-6 pad-right0">
@@ -272,7 +257,7 @@
 									echo form_input($attributes);?>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						
 						<button class="btn-link-dark  center-block" type="submit" name="create"><?php echo get_languageword('Create an Account');?></button>
 					</form>
