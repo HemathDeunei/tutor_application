@@ -47,73 +47,7 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <!-- <div id="preloader">
-        <div id="status">&nbsp;</div>
-    </div> -->
-    <!-- Ends Preloader -->
-
-    <!-- Top bar -->
-    <?php if(strip_tags($this->config->item('site_settings')->top_most_section) == "On") { ?>
-    <div class="navbar-inverse top-bar">
-        <div class="container">
-            <ul class="nav navbar-nav top-nav-left">
-                <li><a href="<?php echo URL_HOME_ABOUT_US;?>"><?php echo get_languageword('About Us');?> </a></li>
-                <li><a href="<?php echo URL_HOME_ALL_COURSES;?>"><?php echo get_languageword('Find Your Course');?> </a></li>
-            </ul>
-
-
-
-
-
-            <!--Home Languages-->
-            <?php
-
-            $web_languages = array();
-            $system_settings = $this->base_model->fetch_records_from(TBL_SETTINGS_FIELDS, array('field_id'=>999));
-            if (!empty($system_settings)) {
-                $system_settings = $system_settings[0];
-
-                if ($system_settings->field_output_value!='') {
-                    $web_languages = explode(',', $system_settings->field_output_value);
-                }
-            }
-
-            if (!empty($web_languages)) {
-            
-             ?>
-            
-            <ul class="nav navbar-nav lang">
-               <li> <a style="color:#222;">
-                    <select name="language" class="home-language" onChange="window.location.href=this.value">
-                        <option value=""><?php echo get_languageword('select_language');?></option>
-
-                        <?php foreach ( $web_languages as $lang) { ?>
-
-                        <option value="<?php echo URL_HOME_CHANGE_LANGUAGE.'/'.$lang;?>" <?php if ($this->session->userdata('current_language')==$lang) echo 'selected="selected"';?>> <?php echo get_languageword($lang);?> </option>
-
-                        
-
-                    <?php } ?>
-
-                     </select> </a>
-              </li>
-            </ul>
-
-            <?php } ?>
-            <!--Home Languages-->
-
-
-
-            <?php if(isset($this->config->item('site_settings')->land_line) && $this->config->item('site_settings')->land_line != '') { ?>
-			<ul class="nav navbar-nav pull-right">
-                <li><a href="tel:<?php echo $this->config->item('site_settings')->land_line; ?>"><i class="fa fa-phone top-bar-icn"></i><?php echo get_languageword('Feel_free_to_call_us_anytime_on');?>  <?php echo $this->config->item('site_settings')->land_line;?></a></li>
-            </ul>
-			<?php } ?>
-        </div>
-    </div>
-    <?php } ?>
-    <!-- Ends Topbar -->
+  
 
     <!-- Nagigation -->
     <nav class="navbar navbar-default yamm">
