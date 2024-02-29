@@ -24,7 +24,6 @@
                         <?php if($row->availability_status==0){?>
                         <p class="tutor-not-avilble"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><b><strong> <?php echo get_languageword('This Tutor Is Not Available Now')?></strong></b></p>
                         <?php } else{?>
-                        <div class="profile-view"><a href="<?php echo URL_HOME_TUTOR_PROFILE.'/'.$row->slug; ?>" class="btn-link-dark"><?php echo get_languageword('View Profile'); ?></a></div>
                         <div class="profile-view"><a href="<?php echo URL_HOME_TUTOR_PROFILE.'/'.$row->slug.'#reserve'; ?>" class="btn-link-dark"><?php echo get_languageword('Book Now'); ?></a></div>
                         <?php } ?>
                     </div>
