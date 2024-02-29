@@ -76,10 +76,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                        <div class="send-quote-block">
-                            <h2 class="heading-line"><?php echo get_languageword('send_me_your_message'); ?>:</h2>
-                            <?php $this->load->view('send_message', array('user_course_opts' => $tutor_course_opts, 'to_user_type' => 'tutor', 'to_user_id' => $row->id)); ?>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
