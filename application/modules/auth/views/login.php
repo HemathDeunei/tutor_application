@@ -73,9 +73,16 @@
 							);
 							echo form_password($attributes);?>
 						</div>
-					
+						<div class="check">
+							<a href="<?php echo URL_AUTH_FORGOT_PASSWORD;?>" class="forgot-pass"> <?php echo get_languageword('Forgot your password?');?></a>
+						</div>
 
-				
+
+						<div class="input-group ">
+							
+						</div>
+						<div class="input-group ">
+							
 						</div>
 
 						<!-- <button class="btn-link-dark signin-btn center-block" type="submit" name="btnLogin"><?php echo get_languageword('Sign In');?></button> -->
