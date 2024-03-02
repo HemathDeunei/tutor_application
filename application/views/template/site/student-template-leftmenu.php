@@ -99,30 +99,7 @@
 </div>
 <!-- /.panel -->
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h4 class="panel-title">
-		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseManage">
-			<i class="fa fa-credit-card"></i><?php echo get_languageword('Manage')?>
-		</a>
-	</h4>
-	</div>
-	<!--/.panel-heading -->
-	<div id="collapseManage" class="panel-collapse <?php if(isset($activemenu) && $activemenu == 'manage') echo 'collapse in'; else echo 'collapse';?>">
-		<div class="panel-body">
-			<ul class="dashboard-links">
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_courses') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_MANAGE_COURSES;?>"><?php echo get_languageword('courses');?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_locations') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_MANAGE_LOCATIONS ?>"><?php echo get_languageword('Locations');?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_teaching_types') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_PREFFERED_TEACHING_TYPES ?>"><?php echo get_languageword('Preffered Teaching Type');?></a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'certificates') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_CERTIFICATES ?>"><?php echo get_languageword('Certificates');?></a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_privacy') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_MANAGE_PRIVACY ?>"><?php echo get_languageword('Privacy');?></a></li>
-			</ul>
-		</div>
-		<!--/.panel-body -->
-	</div>
-	<!--/.panel-collapse -->
-</div>
-<!-- /.panel -->
+
 
 <div class="panel panel-default">
 	<div class="panel-heading">
