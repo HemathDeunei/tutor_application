@@ -14,10 +14,7 @@
 			<li <?php if(isset($activesubmenu) && $activesubmenu == 'student_bookings') echo ' class="active"';?>>
 			<a href='<?php echo URL_ADMIN_STUDENT_BOOKINGS;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('student Bookings');?></a>
 			</li>
-			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'inst_batches') echo ' class="active"';?>>
-			<a href='<?php echo URL_ADMIN_INST_BATCHES;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('institute_batches');?></a>
-			</li>
+	
 			
 		</ul>
 		</li>
