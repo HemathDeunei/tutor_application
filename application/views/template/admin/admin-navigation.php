@@ -1,9 +1,6 @@
 <ul class="sidebar-menu">
 
-	<li <?php if(isset($activemenu) && $activemenu == 'dashboard') echo ' class="active"';?>>
-		<a href='<?php echo URL_ADMIN_INDEX;?>'>
-		<i class='fa fa-home'></i> <?php echo get_languageword('Home');?></a>
-		</li>			
+	
 
 		
 		<li class='treeview <?php if(isset($activemenu) && $activemenu == 'bookings') echo 'active';?>'>
