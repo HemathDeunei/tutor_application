@@ -1184,7 +1184,6 @@ Main Navigation bar  - Navbar-default
     background: #ffffff;
     padding: 10px 0px 10px 0;
     z-index: 1;
-    border: 1px solid #14bdee;
 }
 
 .navbar-default .navbar-nav>li>a {
