@@ -73,8 +73,6 @@
 <!-- /.panel -->
 
 
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'my_course_purchases') echo 'class="active"';?> href="<?php echo URL_STUDENT_COURSE_PURCHASES; ?>"><i class="fa fa-book"></i><?php echo get_languageword('My_Course_Purchases');?></a></div>
-
 
 
 
