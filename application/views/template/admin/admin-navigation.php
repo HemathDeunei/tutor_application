@@ -48,64 +48,12 @@
 			<a href='<?php echo URL_AUTH_INDEX;?>/3'><i class='fa fa-circle-o'></i> <?php echo get_languageword('tutors');?></a>
 			</li>
 			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == '4') echo ' class="active"';?>>
-			<a href='<?php echo URL_AUTH_INDEX;?>/4'><i class='fa fa-circle-o'></i> <?php echo get_languageword('institutes');?></a>
-			</li>
-			
 			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'add') echo ' class="active"';?>>
 			<a href='<?php echo URL_AUTH_INDEX;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('create');?></a>
 			</li>
-		
-			<!--import_users_link-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'import') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/users'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import');?></a>
-			</li>
-			<!--import_users_link-->
 
 		</ul>
 		</li>
-
-
-
-		<li class='treeview <?php if(isset($activemenu) && $activemenu == 'myleads') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-user-md'></i> <?php echo get_languageword('leads');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'all_Leads') echo 'class="active"';?>>
-			<a href='<?php echo URL_ADMIN_ALL_LEADS;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('all_leads');?></a>
-			</li>			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'opened_Leads') echo 'class="active"';?>>
-			<a href='<?php echo URL_ADMIN_OPENED_LEADS;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('open_leads');?></a>
-			</li>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'closed_Leads') echo 'class="active"';?>>
-			<a href='<?php echo URL_ADMIN_CLOSED_LEADS;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('closed_leads');?></a>
-			</li>
-			
-		</ul>
-	</li>
-
-
-	<!--Tutor Selling Courses Start-->
-	<li <?php if(isset($activemenu) && $activemenu == 'tutor_selling_courses') echo ' class="active"';?>>
-		<a href="<?php echo URL_TUTOR_LIST_SELLING_COURSES;?>">
-			<i class="fa fa-book"></i><?php echo get_languageword('Tutor_Selling_Courses');?></a>
-	</li>
-	<!--Tutor Selling Courses End-->
-	
-	
-	<!--Tutor Blogs-->
-	<li <?php if(isset($activemenu) && $activemenu == 'tutors_blogs') echo ' class="active"';?>><a href="<?php echo URL_ADMIN_VIEW_TUTORS_BLOGS;?>"><i class="fa fa-newspaper-o"></i><?php echo get_languageword('Tutors_Blogs');?></a>
-	</li>
-	<!--Tutor Blogs-->
-
-
-	<li <?php if(isset($activemenu) && $activemenu == 'purchased_courses') echo ' class="active"';?>>
-			<a href="<?php echo URL_ADMIN_VIEW_PURCHASED_COURSES;?>">
-				<i class="fa fa-money"></i><?php echo get_languageword('View_Purchased_Courses');?></a>
-		</li>
-
-
 
 	<!--Money Conversion From Tutor-->
 	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'tutor_money_reqs') echo 'active';?>'>
@@ -122,20 +70,6 @@
 		</ul>
 	</li>
 
-	<!--Money Conversion From Institute-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'inst_money_reqs') echo 'active';?>'>
-		<a href='#'>
-			<i class='fa fa-money'></i> <?php echo get_languageword('institute_money_requests');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'inst_Pending') echo ' class="active"';?>>
-			<a href='<?php echo URL_ADMIN_INST_MONEY_CONVERSION_REQUESTS."/Pending";?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('pending');?></a>
-			</li>			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'inst_Done') echo ' class="active"';?>>
-			<a href='<?php echo URL_ADMIN_INST_MONEY_CONVERSION_REQUESTS."/Done";?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('completed');?></a>
-			</li>
-		</ul>
-	</li>
 	
 	
 	<!--Catgories Start-->
@@ -158,18 +92,6 @@
 				<a href='<?php echo URL_CATEGORIES_COURSES;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_course');?></a>
 			</li>
 
-			<!--import_categories-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importcategories') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/categories'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_categories');?></a>
-			</li>
-			<!--import_categories-->
-
-			<!--import_courses-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importcourses') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/courses'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_courses');?></a>
-			</li>
-			<!--import_courses-->
-
 		</ul>
 	</li>
 	<!--Categories End-->
@@ -187,13 +109,6 @@
 			<li <?php if(isset($activesubmenu) && $activesubmenu == 'add_degree') echo ' class="active"';?>>
 				<a href='<?php echo URL_OPTIONS_INDEX;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_degree');?></a>
 			</li>
-
-			<!--import_degrees-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importdegree') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/degree'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_degrees');?></a>
-			</li>
-			<!--import_degrees-->
-
 		</ul>
 	</li>
 	<!--Locations End-->
@@ -211,12 +126,6 @@
 				<a href='<?php echo URL_LOCATIONS_INDEX;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_location');?></a>
 			</li>
 
-			<!--import_locations-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importlocations') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/locations'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_locations');?></a>
-			</li>
-			<!--import_locations-->
-
 		</ul>
 	</li>
 	<!--Locations End-->
@@ -233,11 +142,7 @@
 			<li <?php if(isset($activesubmenu) && $activesubmenu == 'add_package') echo ' class="active"';?>>
 				<a href='<?php echo URL_PACKAGE_INDEX;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_package');?></a>
 			</li>
-			<!--import_packages_link-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importpackages') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/packages'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_packages');?></a>
-			</li>
-			<!--import_packages_link-->
+	
 		</ul>
 	</li>
 	<!--Packages End-->
@@ -255,50 +160,11 @@
 			<li <?php if(isset($activesubmenu) && $activesubmenu == 'certificates-add') echo ' class="active"';?>>
 				<a href='<?php echo base_url();?>certificates/index/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_certificate');?></a>
 			</li>
-			<!--import_certificates_link-->
-			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'importcertificates') echo ' class="active"';?>>
-			<a href='<?php echo base_url();?>import/index/certificates'><i class='fa fa-circle-o'></i> <?php echo get_languageword('import_certificates');?></a>
-			</li>
-			<!--import_certificates_link-->
+		
 		</ul>
 	</li>
 	<!--Certificates End-->
-	
-	
-	<!--Pages Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'pages') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-file'></i> <?php echo get_languageword('pages');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-			
-			<li<?php if(isset($activesubmenu) && $activesubmenu == 'dynamic_pages') echo ' class="active"';?>>
-				<a href='<?php echo URL_ADMIN_DYNAMIC_PAGES; ?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('dynamic_pages');?></a>
-			</li>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'faqs') echo ' class="active"';?>>
-				<a href='<?php echo URL_ADMIN_FAQS; ?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('FAQs');?></a>
-			</li>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'scroll_news') echo ' class="active"';?>>
-				<a href='<?php echo URL_ADMIN_SCROLL_NEWS; ?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('scroll_News');?></a>
-			</li>
-		</ul>
-	</li>
-	<!--Pages End-->
 
-
-	<!--Sections Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'sections') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-cog'></i> <?php echo get_languageword('sections');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'list_sections') echo ' class="active"';?>>
-				<a href='<?php echo URL_SECTIONS_INDEX;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('list_sections');?></a>
-			</li>
-		</ul>
-	</li>
-	<!--Sections End-->
 
 
 	<!--Settings Start-->
@@ -307,74 +173,6 @@
 			<i class="fa fa-wrench"></i><?php echo get_languageword('settings');?></a>
 	</li>
 	<!--Settings End-->
-	
-	<!--Email Templates Start-->
-	<li <?php if(isset($activemenu) && $activemenu == 'etemplates') echo ' class="active"';?>>
-		<a href="<?php echo base_url();?>etemplates/index">
-			<i class="fa fa-envelope"></i><?php echo get_languageword('email_templates');?></a>
-	</li>
-	<!--Email Templates End-->
-	
-	<!--Site Testimonials Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'sitetestimonials') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-comments-o'></i> <?php echo get_languageword('site_Testimonials');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'sitetestimonials') echo ' class="active"';?>>
-				<a href='<?php echo base_url();?>sitetestimonials/index'><i class='fa fa-circle-o'></i> <?php echo get_languageword('list_testimonials');?></a>
-			</li>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'sitetestimonials-add') echo ' class="active"';?>>
-				<a href='<?php echo base_url();?>/sitetestimonials/index/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_testimonial');?></a>
-			</li>
-		</ul>
-	</li>
-	<!--Site Testimonials End-->
-	
-	<!--Team Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'team') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-users'></i> <?php echo get_languageword('Team');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'team') echo ' class="active"';?>>
-				<a href='<?php echo base_url();?>team/index'><i class='fa fa-circle-o'></i> <?php echo get_languageword('list_team');?></a>
-			</li>
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'team-add') echo ' class="active"';?>>
-				<a href='<?php echo base_url();?>/team/index/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('add_team');?></a>
-			</li>
-		</ul>
-	</li>
-	<!--Team End-->
-				
-	<!--Languages Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'language') echo 'active';?>'>
-		<a href='#'>
-            <i class='fa fa-language'></i> <?php echo get_languageword('language_settings');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		<ul class='treeview-menu'>
-
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'languages') echo 'class="active"';?>>
-				<a href='<?php echo URL_LANGUAGE_LANGUAGES;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('view_languages');?></a>
-			</li>
-
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'phrases') echo 'class="active"';?>>
-				<a href='<?php echo URL_LANGUAGE_PHRASES;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('view_phrases');?></a>
-			</li>
-			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'view') echo 'class="active"';?>>
-				<a href='<?php echo URL_LANGUAGE_INDEX;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('update_language_strings');?></a>
-			</li>	
-
-			<!-- <li <?php //if(isset($activesubmenu) && $activesubmenu == 'add') echo 'class="active"';?>>
-				<a href='<?php //echo URL_LANGUAGE_ADDLANGUEGE;?>'><i class='fa fa-circle-o'></i> <?php //echo get_languageword('add_language');?></a>
-			</li> -->
-
-			
-			
-		</ul>
-	</li>
-	<!--Languages End-->
 	
 	<!--Payments Start-->
 	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'payments') echo 'active';?>'>
@@ -393,24 +191,6 @@
 		</ul>
 	</li>
 	<!--Payments End-->
-	
-	<!--Reports Start-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'reports') echo 'active';?>'>
-	<a href='#'>
-        <i class='fa fa-file-text'></i> <?php echo get_languageword('reports');?> <i class='fa fa-angle-left pull-right'></i>
-		</a>
-		</a>
-		<ul class='treeview-menu'>
-			<li <?php if(isset($activesubmenu) && $activesubmenu =='users_info') echo 'class="active"';?>>
-				<a href='<?php echo URL_ADMIN_USERS_INFO;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('users');?></a>
-			</li>					
-			
-			<li <?php if(isset($activesubmenu) && $activesubmenu =='packages_info') echo 'class="active"';?>>
-				<a href='<?php echo URL_ADMIN_PACKAGAES;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('packages');?></a>
-			</li>
-		</ul>
-	</li>
-	<!--Reports End-->
 
 
 	<!--Notifications-->
