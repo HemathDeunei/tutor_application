@@ -64,8 +64,7 @@
 <div class="col-lg-4">
 <div class="row">
 
-<!--document-->
-<a href="<?php echo SITEURL;?>Documentation" target="_blank" class="documentation-btn"><?php echo get_languageword('documentation');?></a>
+
 
 
 
