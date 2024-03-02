@@ -48,29 +48,7 @@
 </div>
 <!-- /.panel -->
 
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'enrolled_courses') echo 'class="active"';?> href="<?php echo URL_STUDENT_ENROLLED_COURSES ?>"><i class="fa fa-book"></i><?php echo get_languageword('Enrolled Courses');?></a></div>
 
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h4 class="panel-title">
-		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseLeads">
-			<i class="fa fa-retweet"></i><?php echo get_languageword('My Leads');?>
-		</a>
-	</h4>
-	</div>
-	<!--/.panel-heading -->
-	<div id="collapseLeads" class="panel-collapse <?php if(isset($activemenu) && $activemenu == 'myleads') echo 'collapse in'; else echo 'collapse';?>">
-		<div class="panel-body">
-			<ul class="dashboard-links">
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'student_leads') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_LEADS?>"><?php echo get_languageword('Leads');?></a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'post_requirement') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_REQUIREMENTS ?>"><?php echo get_languageword('Post Requirement');?></a></li>
-			</ul>
-		</div>
-		<!--/.panel-body -->
-	</div>
-	<!--/.panel-collapse -->
-</div>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
