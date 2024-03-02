@@ -45,12 +45,7 @@
 			<ul class="dashboard-links">
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'enquiries') echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>"><?php echo get_languageword('All');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('pending')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/pending"><?php echo get_languageword('pending'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('approved')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/approved"><?php echo get_languageword('approved'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('session_initiated')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/session_initiated"><?php echo get_languageword('session_initiated'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('running')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/running"><?php echo get_languageword('running'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('completed')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/completed"><?php echo get_languageword('completed'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('called_for_admin_intervention')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/called_for_admin_intervention"><?php echo get_languageword('claim_for_admin_intervention'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('closed')) echo 'class="active"';?>><a href="<?php echo URL_TUTOR_STUDENT_ENQUIRIES;?>/closed"><?php echo get_languageword('closed'); ?> </a></li>
+				
 			</ul>
 		</div>
 		<!--/.panel-body -->
@@ -85,17 +80,8 @@
 </div>
 <!-- /.panel -->
 
-<?php if ($this->config->item('site_settings')->tutor_locations_enable=="yes") { ?>
-<!--tutor_locations_link-->
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'locations') echo 'class="active"';?> href="<?php echo URL_TUTOR_LOCATIONS;?>"><i class="fa fa-map-marker"></i><?php echo get_languageword('locations');?></a></div>
-<!--tutor_locations_link-->
-<?php } ?>
 
-<?php if ($this->config->item('site_settings')->tutor_courses_enable=="yes") { ?>
-<!--tutor_courses_link-->
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'courses') echo 'class="active"';?> href="<?php echo URL_TUTOR_COURSES;?>"><i class="fa fa-book"></i><?php echo get_languageword('courses');?></a></div>
-<!--tutor_courses_link-->
-<?php } ?>
+
 
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -117,31 +103,6 @@
 	</div>
 	<!--/.panel-collapse -->
 </div>
-
-
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h4 class="panel-title">
-		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSellCourses">
-            <i class="fa fa-book"></i><?php echo get_languageword('Sell_Courses_Online')?>
-		</a>
-	</h4>
-	</div>
-	<!--/.panel-heading -->
-	<div id="collapseSellCourses" class="panel-collapse <?php if(isset($activemenu) && $activemenu == 'sell_courses_online') echo 'collapse in'; else echo 'collapse';?>">
-		<div class="panel-body">
-			<ul class="dashboard-links">
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'publish') echo 'class="active"';?>><a href="<?php echo URL_TUTOR_SELL_COURSES_ONLINE;?>"><?php echo get_languageword('publish');?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'list') echo 'class="active"';?>><a href="<?php echo URL_TUTOR_LIST_SELLING_COURSES;?>"><?php echo get_languageword('List_Selling_Courses');?> </a></li>
-			</ul>
-		</div>
-		<!--/.panel-body -->
-	</div>
-	<!--/.panel-collapse -->
-</div>
-
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'purchased_courses') echo 'class="active"';?> href="<?php echo URL_TUTOR_PURCHASED_COURSES; ?>"><i class="fa fa-money"></i><?php echo get_languageword('Purchased_Courses');?></a></div>
 
 
 <div class="panel panel-default">
@@ -196,7 +157,6 @@
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'profile_information') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/profile-information"><?php echo get_languageword('Profile Information');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'experience') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/experience"><?php echo get_languageword('experience');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'update_contact_info') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/contact-information"><?php echo get_languageword('Contact Information');?></a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'gallery') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/my-gallery"><?php echo get_languageword('Gallery');?></a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'change_password') echo 'class="active"';?>><a href="<?php echo base_url();?>auth/change-password"><?php echo get_languageword('Change Password');?></a></li>
 			</ul>
 		</div>
@@ -207,9 +167,7 @@
 <!-- /.panel -->
 
 
-<?php if(!$inst_id) { ?>
-<div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'blogs') echo 'class="active"';?> href="<?php echo URL_TUTOR_BLOGS; ?>"><i class="fa fa-newspaper-o"></i><?php echo get_languageword('my_blogs');?></a></div>
-<?php } ?>  
+
         
 
 <div class="panel panel-default">
