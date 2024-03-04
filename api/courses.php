@@ -41,7 +41,7 @@ if($RequestMethod == "POST"){
                 ];
             
                 header("HTTP/1.0 200 Success");
-                return json_encode($Data);
+                echo json_encode($Data);
             }else{
                 $Data =[
                     'status' => 404,
@@ -49,7 +49,7 @@ if($RequestMethod == "POST"){
                 ];
             
                 header("HTTP/1.0 404 No Course Found");
-                return json_encode($Data);
+                echo json_encode($Data);
             }
 
         }else{
@@ -59,7 +59,7 @@ if($RequestMethod == "POST"){
             ];
         
             header("HTTP/1.0 500 Internal Server Error");
-            return json_encode($Data);
+            echo json_encode($Data);
         }
 
     } catch (Exception $ex) {
@@ -69,7 +69,7 @@ if($RequestMethod == "POST"){
         ];
     
         header("HTTP/1.0 500 Internal Server Error");
-        return json_encode($Data);
+        echo json_encode($Data);
     }
 }else{
     $Data =[

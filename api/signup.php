@@ -63,7 +63,7 @@ if($RequestMethod == "POST"){
         ];
     
         header("HTTP/1.0 500 Internal Server Error");
-        return json_encode($Data);
+        echo json_encode($Data);
     }
 }else{
     $Data =[
