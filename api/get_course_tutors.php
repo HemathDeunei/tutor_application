@@ -27,9 +27,9 @@ if($RequestMethod == "POST"){
                     $data["tutor_id"]       = $record["tutor_id"];
                     $data["course_id"]      = $record["course_id"];
                     $data["username"]       = $record["username"];
-                    $data["photo"]          = empty($record["photo"]) : PROFILE . "default-tutor-male.jpg" ? PROFILE . $record["photo"];
-                    $data["experience"]     = $record["teaching_experience"]." ".$record["duration_of_experience"];
-                    $data["qualification"]  = empty($record["qualification"]) : "NA" ? $record["qualification"];
+                    // $data["photo"]          = empty($record["photo"]) : PROFILE . "default-tutor-male.jpg" ? PROFILE . $record["photo"];
+                    // $data["experience"]     = $record["teaching_experience"]." ".$record["duration_of_experience"];
+                    // $data["qualification"]  = empty($record["qualification"]) : "NA" ? $record["qualification"];
                     
                     array_push($ListArray,$data);
 
