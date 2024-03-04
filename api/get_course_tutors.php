@@ -30,16 +30,16 @@ if($RequestMethod == "POST"){
 
                     $image = "";
 
-                    // if(empty($record["photo"])){
-                    //     $image = PROFILE . "default-tutor-male.jpg";
-                    // }else{
-                    //     $image = PROFILE . $record["photo"];
+                    if(empty($record["photo"])){
+                        $image = PROFILE . "default-tutor-male.jpg";
+                    }else{
+                        $image = PROFILE . $record["photo"];
 
-                    // }
+                    }
 
-                    // $data["photo"]          = $image;
+                    $data["photo"]          = $image;
                     $data["experience"]     = $record["teaching_experience"]." ".$record["duration_of_experience"];
-                    $data["qualification"]  = empty($record["qualification"]) : "NA" ? $record["qualification"];
+                    // $data["qualification"]  = empty($record["qualification"]) : "NA" ? $record["qualification"];
                     
                     array_push($ListArray,$data);
 
