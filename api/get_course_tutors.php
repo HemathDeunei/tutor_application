@@ -39,7 +39,16 @@ if($RequestMethod == "POST"){
 
                     $data["photo"]          = $image;
                     $data["experience"]     = $record["teaching_experience"]." ".$record["duration_of_experience"];
-                    // $data["qualification"]  = empty($record["qualification"]) : "NA" ? $record["qualification"];
+
+                    $qualification = "";
+
+                    if(empty($record["qualification"])){
+                        $qualification = "NA";
+                    }else{
+                        $qualification = $record["qualification"];
+
+                    }
+                    $data["qualification"]  = $qualification;
                     
                     array_push($ListArray,$data);
 
