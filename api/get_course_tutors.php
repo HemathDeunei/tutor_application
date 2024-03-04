@@ -11,7 +11,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $course		= strtolower(addslashes((trim($_REQUEST['course']))));
+        $course		= addslashes((trim($_REQUEST['course'])));
 
         $Query      = "SELECT tc.*, pu.username, pu.photo, pu.teaching_experience, pu.duration_of_experience, pu.qualification FROM pre_tutor_courses AS tc INNER JOIN pre_users AS pu ON tc.tutor_id = pu.id WHERE tc.course_id = '".$course."'";
 
