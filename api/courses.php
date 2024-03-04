@@ -26,7 +26,7 @@ if($RequestMethod == "POST"){
                     $data["id"]             = $record["id"];
                     $data["name"]           = $record["name"];
                     $data["code"]           = $record["code"];
-                    $data["image"]          = $record["image"];
+                    $data["image"]          = COURSES . $record["image"];
                     $data["categories"]     = $record["categories"];
                     $data["category_name"]  = $record["category_name"];
                     

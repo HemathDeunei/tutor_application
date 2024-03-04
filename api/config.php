@@ -13,6 +13,7 @@ define("UPLOAD_PATH",$_SERVER['DOCUMENT_ROOT']."/uploads");
 define("UPLOAD_URL",SITE_URL."/assets/uploads"); 
 
 define("PROFILE",UPLOAD_URL."/profiles/"); 
+define("COURSES",UPLOAD_URL."/courses/"); 
 
 
 $servername = "localhost";
