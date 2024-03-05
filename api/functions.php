@@ -56,7 +56,7 @@ function getSelectedTutorCourses($conn, $tid, $cid){
             $data["tutor_id"]           = $record["tutor_id"];
             $data["course_id"]          = $record["course_id"];
             $data["time_slots"]         = $record["time_slots"];
-            $data["mode"]               = $getTeachingTypes($conn, $record["tutor_id"]);
+            $data["mode"]               = getTeachingTypes($conn, $record["tutor_id"]);
 
             $CQuery      = "SELECT * FROM pre_categories WHERE id = '".$record["course_id"]."'";
             $CResults    = mysqli_query($conn,$CQuery);
@@ -68,7 +68,7 @@ function getSelectedTutorCourses($conn, $tid, $cid){
                     $data["image"]          = COURSES . $crecord["image"];
                 }
             }
-            
+
             array_push($ListArray,$data);
 
         }
