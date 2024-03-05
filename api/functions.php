@@ -21,4 +21,61 @@ function getTutorCourses($conn, $id){
 
 }
 
+function getTeachingTypes($conn, $id){
+    $Query      = "SELECT * FROM pre_tutor_teaching_types WHERE tutor_id ='".$id."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            if($record["teaching_type_id"] == "1"){
+                array_push($ListArray,"Home");
+            }else if($record["teaching_type_id"] == "3"){
+                array_push($ListArray,"Online");
+            }
+        }
+
+    }
+
+    return $ListArray;
+
+}
+
+function getSelectedTutorCourses($conn, $tid, $cid){
+    $Query      = "SELECT * FROM pre_tutor_courses AS tc WHERE tc.course_id = '".$cid."' AND tc.tutor_id ='".$tid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            $data = array();
+            $data["tutor_id"]           = $record["tutor_id"];
+            $data["course_id"]          = $record["course_id"];
+            $data["time_slots"]         = $record["time_slots"];
+            $data["mode"]               = $getTeachingTypes($conn, $record["tutor_id"]);
+
+            $CQuery      = "SELECT * FROM pre_categories WHERE id = '".$record["course_id"]."'";
+            $CResults    = mysqli_query($conn,$CQuery);
+            if (mysqli_num_rows($CResults) > 0) 
+            {
+                while($crecord = mysqli_fetch_assoc($CResults)) 
+                {
+                    $data["name"]           = $crecord["name"];
+                    $data["image"]          = COURSES . $crecord["image"];
+                }
+            }
+            
+            array_push($ListArray,$data);
+
+        }
+
+    }
+
+    return $ListArray;
+
+}
 ?>
