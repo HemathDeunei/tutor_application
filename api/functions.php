@@ -57,6 +57,9 @@ function getSelectedTutorCourses($conn, $tid, $cid){
             $data["course_id"]          = $record["course_id"];
             $data["time_slots"]         = $record["time_slots"];
             $data["mode"]               = getTeachingTypes($conn, $record["tutor_id"]);
+            $data["credits"]            = $record["fee"];
+            $data["duration"]           = $record["duration_value"] ." ". $record["duration_type"];
+            $data["days_off"]           = $record["days_off"];
 
             $CQuery      = "SELECT * FROM pre_categories WHERE id = '".$record["course_id"]."'";
             $CResults    = mysqli_query($conn,$CQuery);
