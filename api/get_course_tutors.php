@@ -6,6 +6,7 @@ header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Conte
 Access-Control-Request-Method, Access-Control-Allow-Origin");
 
 include "config.php";
+include "functions.php";
 
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
@@ -27,6 +28,10 @@ if($RequestMethod == "POST"){
                     $data["tutor_id"]       = $record["tutor_id"];
                     $data["course_id"]      = $record["course_id"];
                     $data["username"]       = $record["username"];
+
+                    $Courses = getTutorCourses($conn, $record["tutor_id"]);
+
+                    $data["teaches"]       = $Courses;
 
                     $image = "";
 
