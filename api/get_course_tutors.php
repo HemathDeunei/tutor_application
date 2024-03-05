@@ -31,7 +31,7 @@ if($RequestMethod == "POST"){
 
                     $Courses = getTutorCourses($conn, $record["tutor_id"]);
 
-                    $data["teaches"]       = $Courses;
+                    $data["teaches"]       = implode(",",$Courses);
 
                     $image = "";
 
