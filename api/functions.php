@@ -9,10 +9,9 @@ function getTutorCourses($conn, $id){
     {
         while($record = mysqli_fetch_assoc($Results)) 
         {
-            $data                        = array();
-            $data["name"]                = $record["name"];
+    
        
-            array_push($ListArray,$data);
+            array_push($ListArray,$record["name"]);
 
         }
 
