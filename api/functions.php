@@ -84,7 +84,7 @@ function getSelectedTutorCourses($conn, $tid, $cid){
 
 function getTutorCourseDetails($conn, $tid, $cid)
 {
-    $Query      = "SELECT *, (SELECT name from pre_categories WHERE id = tc.course_id) AS name FROM pre_tutor_courses AS tc WHERE tc.course_id = '".$cid."' tc.tutor_id ='".$tid."'";
+    $Query      = "SELECT *, (SELECT name from pre_categories WHERE id = tc.course_id) AS name FROM pre_tutor_courses AS tc WHERE tc.course_id = '".$cid."' AND tc.tutor_id ='".$tid."'";
     $Results    = mysqli_query($conn,$Query);
     $ListArray  = array();
 
