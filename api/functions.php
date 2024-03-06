@@ -72,13 +72,13 @@ function getSelectedTutorCourses($conn, $tid, $cid){
                 }
             }
 
-            array_push($ListArray,$data);
+            // array_push($ListArray,$data);
 
         }
 
     }
 
-    return $ListArray;
+    return $data;
 
 }
 ?>

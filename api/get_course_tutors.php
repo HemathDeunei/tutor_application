@@ -55,14 +55,14 @@ if($RequestMethod == "POST"){
                     }
                     $data["qualification"]  = $qualification;
                     
-                    // array_push($ListArray,$data);
+                    array_push($ListArray,$data);
 
                 }
 
                 $Data =[
                     'status' => 200,
                     'message' => 'Success',
-                    'data' => $data,
+                    'data' => $ListArray,
                 ];
             
                 header("HTTP/1.0 200 Success");
