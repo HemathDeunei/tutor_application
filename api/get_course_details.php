@@ -23,6 +23,7 @@ if($RequestMethod == "POST"){
         $data = getSelectedTutorCourses($conn, $tutor, $course);
 
         $Data =[
+            'point' => "head",
             'status' => 200,
             'message' => 'Success',
             'data' => $data,
