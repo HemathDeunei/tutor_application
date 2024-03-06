@@ -30,7 +30,7 @@ if($RequestMethod == "POST"){
         $Data =[
             'status' => 200,
             'message' => 'Success',
-            'data' => $StudentDetails["net_credits"],
+            'data' => $StudentDetails["username"],
         ];
     
         header("HTTP/1.0 200 Success");
