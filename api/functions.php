@@ -81,4 +81,49 @@ function getSelectedTutorCourses($conn, $tid, $cid){
     return $data;
 
 }
+
+function getTutorCourseDetails($conn, $tid, $cid)
+{
+    $Query      = "SELECT *, (SELECT name from pre_categories WHERE id = tc.course_id) AS name FROM pre_tutor_courses AS tc WHERE tc.course_id = '".$cid."' tc.tutor_id ='".$tid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+    
+            return $record;
+
+            // array_push($ListArray,$record["name"]);
+
+        }
+
+    }
+
+
+}
+
+
+function getStudentDetails($conn, $sid)
+{
+    $Query      = "SELECT * pre_users WHERE id = '.$sid.'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+    
+            return $record;
+
+            // array_push($ListArray,$record["name"]);
+
+        }
+
+    }
+
+
+}
 ?>
