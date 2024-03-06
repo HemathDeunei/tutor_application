@@ -27,7 +27,14 @@ if($RequestMethod == "POST"){
             'status' => 200,
             'message' => 'Success',
             'tutor_id' => $data["tutor_id"],
-            'data' => $data,
+            'course_id' => $data["course_id"],
+            'time_slots' => $data["time_slots"],
+            'mode' => $data["mode"],
+            'credits' => $data["credits"],
+            'duration' => $data["duration"],
+            'days_off' => $data["days_off"],
+            'name' => $data["name"],
+            'image' => $data["image"],
         ];
     
         header("HTTP/1.0 200 Success");
