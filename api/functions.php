@@ -107,7 +107,7 @@ function getTutorCourseDetails($conn, $tid, $cid)
 
 function getStudentDetails($conn, $sid)
 {
-    $Query      = "SELECT * pre_users WHERE id = '.$sid.'";
+    $Query      = "SELECT * pre_users WHERE id = $sid";
     $Results    = mysqli_query($conn,$Query);
     $ListArray  = array();
 
