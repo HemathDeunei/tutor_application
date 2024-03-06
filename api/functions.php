@@ -115,15 +115,14 @@ function getStudentDetails($conn, $sid)
     {
         while($record = mysqli_fetch_assoc($Results)) 
         {
-    
-            return $record;
+            $ListArray["username"]  = $record["username"];
 
-            // array_push($ListArray,$record["name"]);
 
         }
 
     }
 
+    return $ListArray;
 
 }
 ?>
