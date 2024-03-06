@@ -107,7 +107,7 @@ function getTutorCourseDetails($conn, $tid, $cid)
 
 function getStudentDetails($conn, $sid)
 {
-    $Query      = "SELECT * pre_users WHERE id = $sid";
+    $Query      = "SELECT * FROM pre_users WHERE id = '.$sid.'";
     $Results    = mysqli_query($conn,$Query);
     $ListArray  = array();
 
@@ -115,14 +115,13 @@ function getStudentDetails($conn, $sid)
     {
         while($record = mysqli_fetch_assoc($Results)) 
         {
-            $ListArray["username"]  = $record["username"];
+            return $record;
 
 
         }
 
     }
 
-    return $ListArray;
 
 }
 ?>
