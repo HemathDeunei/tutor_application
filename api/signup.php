@@ -9,7 +9,7 @@ include "config.php";
 
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($RequestMethod == "POST"){
+if($RequestMethod == "GET"){
     try {
         $type		= strtolower(addslashes((trim($_REQUEST['type']))));
         $first_name	= addslashes((trim($_REQUEST['first_name'])));
