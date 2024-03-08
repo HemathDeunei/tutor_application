@@ -24,8 +24,22 @@ if($RequestMethod == "GET"){
 
         $CourseDetails  = getTutorCourseDetails($conn, $tutor, $course);
         $StudentDetails = getStudentDetails($conn, $student_id);
+        $BookingDetails = getBookingDetails($conn, $tutor, $course);
 
+        $StudentCredits = (int) $StudentDetails["net_credits"];
+        $CourseCredits  = (int) $CourseDetails["fee"];
 
+        if($StudentCredits < $CourseCredits)
+        {
+            $Data =[
+                'status' => 400,
+                'message' => 'Not enought credits',
+            ];
+        
+            header("HTTP/1.0 200 Success");
+            echo json_encode($Data);
+            exit;
+        }
 
         $Data =[
             'status' => 200,

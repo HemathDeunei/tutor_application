@@ -124,4 +124,25 @@ function getStudentDetails($conn, $sid)
 
 
 }
+
+function getBookingDetails($conn, $tid, $cid)
+{
+    $Query      = "SELECT * FROM pre_bookings WHERE course_id = '".$cid."' AND tutor_id ='".$tid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+    
+            return $record;
+
+
+        }
+
+    }
+
+
+}
 ?>
