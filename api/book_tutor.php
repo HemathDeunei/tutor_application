@@ -22,7 +22,8 @@ if($RequestMethod == "GET"){
         $tutor		        = addslashes((trim($_REQUEST['tutor'])));
         $date		        = addslashes((trim($_REQUEST['date'])));
         $message		    = addslashes((trim($_REQUEST['message'])));
-        $preferred_location		    = addslashes((trim($_REQUEST['mode'])));
+        $preferred_location	= addslashes((trim($_REQUEST['location'])));
+        $slot             	= addslashes((trim($_REQUEST['slot'])));
 
 
         $CourseDetails  = getTutorCourseDetails($conn, $tutor, $course);
@@ -62,7 +63,7 @@ if($RequestMethod == "GET"){
 		$content 				= $CourseDetails["content"];
         $duration_value 		= $CourseDetails["duration_value"];
 		$duration_type 			= $CourseDetails["duration_type"];
-		$time_slot   			= $CourseDetails["time_slots"];
+		$time_slot   			= $slot;
         $start_date  			= date('Y-m-d', strtotime($date));
         $days_off 				= $CourseDetails["days_off"];
 		$per_credit_value 		= $CourseDetails["per_credit_value"];
@@ -125,7 +126,7 @@ if($RequestMethod == "GET"){
         $Data =[
             'status' => 200,
             'message' => 'Success',
-            'data' => $StudentDetails["username"],
+            'data' => $BookingArray,
         ];
     
         header("HTTP/1.0 200 Success");
