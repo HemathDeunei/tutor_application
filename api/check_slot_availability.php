@@ -43,7 +43,13 @@ if($RequestMethod == "POST"){
 
         }
 
-        $AvailableSlots = array_diff($SlotArray,$SelectedSlots);
+        $DiffArray      = array_diff($SlotArray,$SelectedSlots);
+        $AvailableSlots = array();
+
+        foreach ($DiffArray as $value) 
+		{
+            array_push($AvailableSlots,$value);
+        }
 
         $Data =[
             'status' => 200,
