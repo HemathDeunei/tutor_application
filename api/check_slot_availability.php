@@ -29,12 +29,14 @@ if($RequestMethod == "GET"){
         $Query      = "SELECT * FROM `pre_bookings` WHERE start_date >= '".$date."' AND end_date <= '".$date."' AND tutor_id = '".$tutor."' AND course_id = '".$course."'";
         $Results    = mysqli_query($conn,$Query);
 
+        echo $Query;
+
         $AvailableSlots = array();
         if (mysqli_num_rows($Results) > 0) 
         {
             while($record = mysqli_fetch_assoc($Results)) 
             {
-                
+                echo $record["time_slot"];
                 if(in_array($record["time_slot"], $SlotArray, TRUE))
                 {
                     
