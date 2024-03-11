@@ -69,21 +69,21 @@ if($RequestMethod == "POST"){
                 echo json_encode($Data);
             }else{
                 $Data =[
-                    'status' => 404,
+                    'status' => 200,
                     'message' => 'No Course Found'
                 ];
             
-                header("HTTP/1.0 404 No Course Found");
+                header("HTTP/1.0 200 No Course Found");
                 echo json_encode($Data);
             }
 
         }else{
             $Data =[
-                'status' => 404,
-                'message' => 'Internal Server Error'
+                'status' => 200,
+                'message' => 'No Course Found'
             ];
         
-            header("HTTP/1.0 404 Internal Server Error");
+            header("HTTP/1.0 200 No Course Found");
             echo json_encode($Data);
         }
 

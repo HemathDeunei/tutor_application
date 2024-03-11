@@ -14,11 +14,12 @@ include "functions.php";
 
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($RequestMethod == "GET"){
+if($RequestMethod == "POST"){
     try {
-        $date	= addslashes((trim($_REQUEST['date'])));
+        $date	    = addslashes((trim($_REQUEST['date'])));
         $course	    = addslashes((trim($_REQUEST['course'])));
-        $tutor	= addslashes((trim($_REQUEST['tutor'])));
+        $tutor	    = addslashes((trim($_REQUEST['tutor'])));
+        $location	= addslashes((trim($_REQUEST['location'])));
 
 
         $CourseDetails  = getTutorCourseDetails($conn, $tutor, $course);
@@ -26,7 +27,7 @@ if($RequestMethod == "GET"){
         $time_slot   			= $CourseDetails["time_slots"];
         $SlotArray              = explode(',',$time_slot);
 
-        $Query      = "SELECT * FROM `pre_bookings` WHERE start_date >= '".$date."' AND end_date <= '".$date."' AND tutor_id = '".$tutor."' AND course_id = '".$course."'";
+        $Query      = "SELECT * FROM `pre_bookings` WHERE start_date >= '".$date."' AND end_date <= '".$date."' AND preferred_location = '".$location."' AND tutor_id = '".$tutor."' AND course_id = '".$course."'";
         $Results    = mysqli_query($conn,$Query);
 
 
@@ -38,16 +39,16 @@ if($RequestMethod == "GET"){
             while($record = mysqli_fetch_assoc($Results)) 
             {
                 array_push($SelectedSlots,$record["time_slot"]);
-
-                
             }
 
         }
 
+        $AvailableSlots = array_diff($SlotArray,$SelectedSlots);
+
         $Data =[
             'status' => 200,
             'message' => 'Slots received',
-            'available_slots' => array_diff($SlotArray,$SelectedSlots)
+            'available_slots' => $AvailableSlots
         ];
 
         header("HTTP/1.0 200 Success");
