@@ -29,20 +29,17 @@ if($RequestMethod == "GET"){
         $Query      = "SELECT * FROM `pre_bookings` WHERE start_date >= '".$date."' AND end_date <= '".$date."' AND tutor_id = '".$tutor."' AND course_id = '".$course."'";
         $Results    = mysqli_query($conn,$Query);
 
-        echo $Query;
 
-        $AvailableSlots = array();
+        $SelectedSlots = array();
+
+
         if (mysqli_num_rows($Results) > 0) 
         {
             while($record = mysqli_fetch_assoc($Results)) 
             {
-                echo $record["time_slot"];
-                if(in_array($record["time_slot"], $SlotArray, TRUE))
-                {
-                    
-                }else{
-                    array_push($AvailableSlots,$record["time_slot"]);
-                }
+                array_push($SelectedSlots,$record["time_slot"]);
+
+                
             }
 
         }
@@ -50,7 +47,7 @@ if($RequestMethod == "GET"){
         $Data =[
             'status' => 200,
             'message' => 'Slots received',
-            'slots' => $AvailableSlots
+            'available_slots' => array_diff($SlotArray,$SelectedSlots)
         ];
 
         header("HTTP/1.0 200 Success");
