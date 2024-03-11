@@ -45,7 +45,7 @@ if($RequestMethod == "GET"){
             exit;
         }
 
-        echo var_dump($BookingDetails);
+        echo $BookingDetails["status"];
 
         if($BookingDetails != false){
 
