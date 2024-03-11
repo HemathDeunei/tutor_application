@@ -125,9 +125,9 @@ function getStudentDetails($conn, $sid)
 
 }
 
-function getBookingDetails($conn, $tid, $cid)
+function getBookingDetails($conn, $sid, $tid, $cid)
 {
-    $Query      = "SELECT * FROM pre_bookings WHERE course_id = '".$cid."' AND tutor_id ='".$tid."'";
+    $Query      = "SELECT * FROM pre_bookings WHERE student_id = '".$sid."' AND course_id = '".$cid."' AND tutor_id ='".$tid."'";
     $Results    = mysqli_query($conn,$Query);
     $ListArray  = array();
 

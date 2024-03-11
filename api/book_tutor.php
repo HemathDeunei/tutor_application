@@ -28,7 +28,7 @@ if($RequestMethod == "GET"){
 
         $CourseDetails  = getTutorCourseDetails($conn, $tutor, $course);
         $StudentDetails = getStudentDetails($conn, $student_id);
-        $BookingDetails = getBookingDetails($conn, $tutor, $course);
+        $BookingDetails = getBookingDetails($conn, $student_id, $tutor, $course);
 
         $StudentCredits = (int) $StudentDetails["net_credits"];
         $CourseCredits  = (int) $CourseDetails["fee"];
@@ -44,8 +44,6 @@ if($RequestMethod == "GET"){
             echo json_encode($Data);
             exit;
         }
-
-        echo $student_id;
 
         if($BookingDetails != false){
 
