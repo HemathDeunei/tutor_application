@@ -35,8 +35,10 @@ if($RequestMethod == "GET"){
             while($record = mysqli_fetch_assoc($Results)) 
             {
                 
-                if(!in_array($record["time_slot"], $SlotArray, TRUE))
+                if(in_array($record["time_slot"], $SlotArray, TRUE))
                 {
+                    
+                }else{
                     array_push($AvailableSlots,$record["time_slot"]);
                 }
             }
