@@ -45,7 +45,7 @@ if($RequestMethod == "GET"){
             exit;
         }
 
-        echo $BookingDetails["status"];
+        echo $student_id;
 
         if($BookingDetails != false){
 
