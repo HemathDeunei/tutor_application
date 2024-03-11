@@ -15,7 +15,7 @@ include "functions.php";
 
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($RequestMethod == "GET"){
+if($RequestMethod == "POST"){
     try {
         $student_id 		= addslashes((trim($_REQUEST['student'])));
         $course		        = addslashes((trim($_REQUEST['course'])));
@@ -29,6 +29,7 @@ if($RequestMethod == "GET"){
         $CourseDetails  = getTutorCourseDetails($conn, $tutor, $course);
         $StudentDetails = getStudentDetails($conn, $student_id);
         $BookingDetails = getBookingDetails($conn, $student_id, $tutor, $course);
+        $TutorDetails   = getTutorDetails($conn, $tutor);
 
         $StudentCredits = (int) $StudentDetails["net_credits"];
         $CourseCredits  = (int) $CourseDetails["fee"];
@@ -123,6 +124,51 @@ if($RequestMethod == "GET"){
         $BookingArray["updated_at"]                = $updated_at;
         $BookingArray["updated_by"]                = $updated_by;
 
+        $columns = implode(", ",array_keys($BookingArray));
+        $escaped_values = array_map(array($conn, 'real_escape_string'), array_values($BookingArray));
+        $values  = implode("', '", $escaped_values);
+        $StoreQuery = "INSERT INTO pre_bookings ($columns) VALUES ('$values')";
+        $ExecuteStoreQuery = mysqli_query($conn,$StoreQuery) or die ("Error in query: $StoreQuery. ".mysqli_error($conn));
+
+        $ref = mysqli_insert_id($conn);
+
+        $log_data = array(
+            'user_id' => $student_id,
+            'credits' => $fee,
+            'per_credit_value' => $per_credit_value,
+            'action'  => 'debited',
+            'purpose' => 'Slot booked with the Tutor "'.$TutorDetails["slug"].'" and Booking Id is '.$ref,
+            'date_of_action	' => date('Y-m-d H:i:s'),
+            'reference_table' => 'bookings',
+            'reference_id' => $ref,
+        );
+
+        $columns = implode(", ",array_keys($log_data));
+        $escaped_values = array_map(array($conn, 'real_escape_string'), array_values($log_data));
+        $values  = implode("', '", $escaped_values);
+        $StoreQuery = "INSERT INTO pre_user_credit_transactions ($columns) VALUES ('$values')";
+        $ExecuteStoreQuery = mysqli_query($conn,$StoreQuery) or die ("Error in query: $StoreQuery. ".mysqli_error($conn));
+
+        $TotalCredits = (int) $StudentDetails["net_credits"];
+        $SpentCredits = (int) $fee;
+        $NetCredits   = $TotalCredits - $SpentCredits;
+
+        $UpdateArray                              = array();
+        $UpdateArray["net_credits"]               = $NetCredits;
+        $UpdateArray["last_updated"]              = date('Y-m-d H:i:s');
+
+        $UpdatProfile = "UPDATE pre_users SET ";
+        foreach($UpdateArray as $k => $v)
+        {
+            $UpdatProfile .= $k."='". $v."', ";
+        }
+        $UpdatProfile = rtrim($UpdatProfile, ", ");
+        $UpdatProfile .= " where id = $student_id";
+
+        $ExecuteQuery = mysqli_query($conn,$UpdatProfile) or die ("Error in query: $UpdatProfile. ".mysqli_error($conn));
+
+        
+
         $Data =[
             'status' => 200,
             'message' => 'Success',
@@ -131,6 +177,7 @@ if($RequestMethod == "GET"){
     
         header("HTTP/1.0 200 Success");
         echo json_encode($Data);
+
 
      
 
