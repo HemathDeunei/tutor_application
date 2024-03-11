@@ -45,6 +45,8 @@ if($RequestMethod == "GET"){
             exit;
         }
 
+        echo $BookingDetails;
+        
         if($BookingDetails != false){
 
             if($BookingDetails["status"] == "pending" || $BookingDetails["status"] == "approved" || $BookingDetails["status"] == "running" || $BookingDetails["status"] == "session_initiated"){
