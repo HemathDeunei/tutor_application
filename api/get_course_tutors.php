@@ -69,21 +69,21 @@ if($RequestMethod == "POST"){
                 echo json_encode($Data);
             }else{
                 $Data =[
-                    'status' => 200,
-                    'message' => 'No Course Found'
+                    'status' => 300,
+                    'message' => 'No Tutor Found'
                 ];
             
-                header("HTTP/1.0 200 No Course Found");
+                header("HTTP/1.0 300 No Tutor Found");
                 echo json_encode($Data);
             }
 
         }else{
             $Data =[
-                'status' => 200,
-                'message' => 'No Course Found'
+                'status' => 300,
+                'message' => 'No Tutor Found'
             ];
         
-            header("HTTP/1.0 200 No Course Found");
+            header("HTTP/1.0 300 No Tutor Found");
             echo json_encode($Data);
         }
 
