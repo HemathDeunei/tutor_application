@@ -141,6 +141,8 @@ function getBookingDetails($conn, $tid, $cid)
 
         }
 
+    }else{
+        return false;
     }
 
 
