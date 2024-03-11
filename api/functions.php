@@ -166,5 +166,26 @@ function getBookingDetails($conn, $sid, $tid, $cid)
     }
 }
 
+function getCourse($conn, $cid)
+{
+    $Query      = "SELECT * FROM pre_categories WHERE id = '".$cid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+    
+            return $record;
+
+
+        }
+
+    }else{
+        return false;
+    }
+}
+
 
 ?>
