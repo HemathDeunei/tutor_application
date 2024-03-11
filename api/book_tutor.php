@@ -172,7 +172,6 @@ if($RequestMethod == "POST"){
         $Data =[
             'status' => 200,
             'message' => 'Success',
-            'data' => $BookingArray,
         ];
     
         header("HTTP/1.0 200 Success");
