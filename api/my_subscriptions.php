@@ -12,40 +12,27 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $student		        = addslashes(ucfirst(trim($_REQUEST['student'])));
+        $id		        = addslashes(ucfirst(trim($_REQUEST['id'])));
 
-        $Query      = "SELECT * FROM pre_bookings WHERE student_id = '".$student."' ORDER BY booking_id DESC";
-
-        $Results    = mysqli_query($conn,$Query);
-        $ListArray  = array();
+        $Query          = "SELECT * FROM pre_subscriptions WHERE user_id = '".$id."' ORDER BY id DESC";
+        $Results        = mysqli_query($conn,$Query);
+        $ListArray      = array();
 
         if($Results){
             if (mysqli_num_rows($Results) > 0) 
             {
                 while($record = mysqli_fetch_assoc($Results)) 
                 {
-                    $data = array();
-                    $data["booking_id"]             = $record["booking_id"];
-                    $data["student_id"]              = $record["student_id"];
-                    $data["tutor_id"]                = $record["tutor_id"];
-                    $data["course_id"]               = $record["course_id"];
-
-                    $TutorDetails   = getTutorDetails($conn,$record["tutor_id"]);
-                    $CourseDetails  = getCourse($conn, $record["course_id"]);
-
-                    $data["tutor_name"]              = $TutorDetails["username"];
-                    $data["course_name"]             = $CourseDetails["name"];
-
-                    $data["duration"]                = $record["duration_value"]." ".$record["duration_type"];
-                    $data["fee"]                     = $record["fee"];
-                    $data["commence_date"]           = $record["start_date"];
-                    $data["time_slot"]               = $record["time_slot"];
-                    $data["location"]                = $record["preferred_location"];
-                    $data["prev_status"]             = $record["prev_status"];
-                    $data["status"]                  = $record["status"];
+                    $data                       = array();
+                    $data["id"]                 = $record["id"];
+                    $data["user_id"]            = $record["user_id"];
+                    $data["package_name"]       = $record["package_name"];
+                    $data["subscribe_date"]     = date('d M, Y', strtotime($record["subscribe_date"]));
+                    $data["payment_type"]       = $record["payment_type"];
+                    $data["credits"]            = $record["credits"];
+                    $data["amount_paid"]        = $record["amount_paid"];
 
                     array_push($ListArray,$data);
-
                 }
 
                 $Data =[
