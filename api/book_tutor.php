@@ -37,11 +37,11 @@ if($RequestMethod == "POST"){
         if($StudentCredits < $CourseCredits)
         {
             $Data =[
-                'status' => 400,
+                'status' => 200,
                 'message' => 'Not enought credits',
             ];
         
-            header("HTTP/1.0 400 Not enought credits");
+            header("HTTP/1.0 200 Not enought credits");
             echo json_encode($Data);
             exit;
         }
