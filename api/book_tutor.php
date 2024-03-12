@@ -37,11 +37,11 @@ if($RequestMethod == "POST"){
         if($StudentCredits < $CourseCredits)
         {
             $Data =[
-                'status' => 200,
+                'status' => 300,
                 'message' => 'Not enought credits',
             ];
         
-            header("HTTP/1.0 200 Not enought credits");
+            header("HTTP/1.0 300 Not enought credits");
             echo json_encode($Data);
             exit;
         }
@@ -50,11 +50,11 @@ if($RequestMethod == "POST"){
 
             if($BookingDetails["status"] == "pending" || $BookingDetails["status"] == "approved" || $BookingDetails["status"] == "running" || $BookingDetails["status"] == "session_initiated"){
                 $Data =[
-                    'status' => 400,
+                    'status' => 300,
                     'message' => 'You already booked this tutor and your course not yet completed.',
                 ];
             
-                header("HTTP/1.0 400 Already Booked");
+                header("HTTP/1.0 300 Already Booked");
                 echo json_encode($Data);
                 exit;
             }
