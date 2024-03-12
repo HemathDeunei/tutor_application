@@ -37,7 +37,7 @@ if($RequestMethod == "POST"){
         if($StudentCredits < $CourseCredits)
         {
             $Data =[
-                'status' => 300,
+                'status' => 200,
                 'message' => 'Not enought credits',
             ];
         
@@ -50,7 +50,7 @@ if($RequestMethod == "POST"){
 
             if($BookingDetails["status"] == "pending" || $BookingDetails["status"] == "approved" || $BookingDetails["status"] == "running" || $BookingDetails["status"] == "session_initiated"){
                 $Data =[
-                    'status' => 300,
+                    'status' => 200,
                     'message' => 'You already booked this tutor and your course not yet completed.',
                 ];
             
