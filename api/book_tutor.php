@@ -15,7 +15,7 @@ include "functions.php";
 
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($RequestMethod == "POST"){
+if($RequestMethod == "GET"){
     try {
         $student_id 		= addslashes((trim($_REQUEST['student'])));
         $course		        = addslashes((trim($_REQUEST['course'])));
