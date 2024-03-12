@@ -41,7 +41,7 @@ if($RequestMethod == "POST"){
                 'message' => 'Not enought credits',
             ];
         
-            header("HTTP/1.0 300 Not enought credits");
+            header("HTTP/1.0 200 Not enought credits");
             echo json_encode($Data);
             exit;
         }
@@ -54,7 +54,7 @@ if($RequestMethod == "POST"){
                     'message' => 'You already booked this tutor and your course not yet completed.',
                 ];
             
-                header("HTTP/1.0 300 Already Booked");
+                header("HTTP/1.0 200 Already Booked");
                 echo json_encode($Data);
                 exit;
             }
