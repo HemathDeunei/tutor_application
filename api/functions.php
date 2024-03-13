@@ -125,6 +125,46 @@ function getStudentDetails($conn, $sid)
 
 }
 
+function getUserDetails($conn, $uid)
+{
+    $Query      = "SELECT * FROM pre_users WHERE id = '".$uid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record;
+
+
+        }
+
+    }
+
+
+}
+
+function getPackageDetails($conn, $pid)
+{
+    $Query      = "SELECT * FROM pre_packages WHERE id = '".$pid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record;
+
+
+        }
+
+    }
+
+
+}
+
 function getTutorDetails($conn, $tid)
 {
     $Query      = "SELECT * FROM pre_users WHERE id = '".$tid."'";
