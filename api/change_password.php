@@ -11,7 +11,7 @@ include "config.php";
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
-    $user_id		    = addslashes(ucfirst(trim($_REQUEST['id'])));
+    $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
     $password		    = addslashes(ucfirst(trim($_REQUEST['password'])));
     $new_password		= addslashes(ucfirst(trim($_REQUEST['new_password'])));
 
