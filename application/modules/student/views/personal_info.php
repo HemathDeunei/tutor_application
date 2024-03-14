@@ -145,7 +145,7 @@
 				</div>
 
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-12 ">
+			<!-- <div class="col-lg-6 col-md-6 col-sm-12 ">
 				<div class="input-group ">
 					<label><?php echo get_languageword('Languages Known');?>:</label>
 					<?php
@@ -162,7 +162,7 @@
 					?>  
 					<?php echo form_error('language_of_teaching','<div class="error">', '</div>');?>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="col-sm-6 ">
 				<div class="input-group ">
@@ -188,7 +188,7 @@
 					?>
 				</div>
 			</div>
-			<div class="col-sm-6 ">
+			<!-- <div class="col-sm-6 ">
 				<div class="input-group ">
 					<label><?php echo get_languageword('Facebook Profile');?>:</label>
 					<?php			   
@@ -212,8 +212,8 @@
 					?>
 					
 				</div>
-			</div>
-
+			</div> -->
+<!-- 
 			<div class="col-sm-6 ">
 				<div class="input-group ">
 					<label><?php echo get_languageword('Twitter Profile');?>:</label>
@@ -285,7 +285,7 @@
 					echo form_input($element);
 					?>
 				</div>
-			</div>
+			</div> -->
 			<div class="col-sm-12 ">
 				<button class="btn-link-dark dash-btn" name="submitbutt" type="Submit"><?php echo get_languageword('SAVE');?></button>
 			</div>

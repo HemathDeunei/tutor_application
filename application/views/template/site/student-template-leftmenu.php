@@ -108,7 +108,6 @@
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'personal_info') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_PERSONAL_INFO ?>"><?php echo get_languageword('Personnel Information')?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'profile_information') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_PROFILE_INFO ?>"><?php echo get_languageword('Profile Information');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'update_contact_info') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_CONTACT_INFO ?>"><?php echo get_languageword('My Address');?></a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'gallery') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_MY_GALLARY ?>"><?php echo get_languageword('Gallery');?></a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'change_password') echo 'class="active"';?>><a href="<?php echo URL_AUTH_CHANGE_PASSWORD ?>"><?php echo get_languageword('Change Password');?></a></li>
 			</ul>
 		</div>
