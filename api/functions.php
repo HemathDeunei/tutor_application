@@ -1,4 +1,38 @@
 <?php
+function UploadImageFile($image){
+    try 
+    {
+        $uploadDirectory = PROFILE_UPLOAD_PATH . '/';
+        $uploadURL       = PROFILE;
+        $image_file_path = "";
+
+        if (!file_exists($uploadDirectory)) {
+            mkdir($uploadDirectory, 0755, true);
+        }
+
+        $file_ext  =    pathinfo($_FILES["$image"]['name'], PATHINFO_EXTENSION);
+        $file_name = $_FILES["$image"]["name"];
+        $file_tmp  = $_FILES["$image"]["tmp_name"];
+        $ext       = pathinfo($file_name, PATHINFO_EXTENSION);
+
+        if (in_array($ext, ['jpeg', 'jpg', 'png', 'gif','PNG', 'jfif'])) {
+            $newFileName = uniqid("profile_") . "." . $file_ext;
+            $uploadPath = $uploadDirectory . $newFileName;
+
+
+            if (move_uploaded_file($file_tmp, $uploadPath)) {
+                // $image_file_path= $uploadURL . $newFileName;
+                $image_file_path = $newFileName;
+
+            }
+        }
+
+        return $image_file_path;
+
+    } catch (Exception $ex) {
+        return "Upload Error : ".$ex->getMessage();
+    }
+}
 
 function getTutorCourses($conn, $id){
     $Query      = "SELECT *, (SELECT name from pre_categories WHERE id = tc.course_id) AS name FROM pre_tutor_courses AS tc WHERE tc.tutor_id ='".$id."'";
