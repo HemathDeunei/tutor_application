@@ -14,14 +14,30 @@ if($RequestMethod == "POST"){
     try {
         $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
         
-        
-        $Query          = "SELECT * FROM pre_subscriptions WHERE user_id = '".$id."' ORDER BY id DESC";
-        $Results        = mysqli_query($conn,$Query);
-        $ListArray      = array();
+        $UserDetails    = getUserDetails($conn, $user_id);
+
+        $UserArray                            = array();
+        $UserArray["user_id"]                 = $UserDetails["id"];
+        $UserArray["first_name"]              = $UserDetails["first_name"];
+        $UserArray["last_name"]               = $UserDetails["last_name"];
+        $UserArray["email"]                   = $UserDetails["email"];
+        $UserArray["dob"]                     = $UserDetails["dob"];
+        $UserArray["gender"]                  = $UserDetails["gender"];
+        $UserArray["website"]                 = $UserDetails["website"];
+        $UserArray["image"]                   = PROFILE . $UserDetails["photo"];
+        $UserArray["profile"]                 = $UserDetails["profile"];
+        $UserArray["qualification"]           = $UserDetails["qualification"];
+        $UserArray["profile_page_title"]      = $UserDetails["profile_page_title"];
+        $UserArray["username"]                = $UserDetails["username"];
+        $UserArray["total_credits"]           = $UserDetails["net_credits"];
+        $UserArray["total_bookings"]          = getTotalBookings($conn, $user_id);
+        $UserArray["total_pending_bookings"]  = getPendingBookings($conn, $user_id);
+
 
         $Data =[
             'status' => 200,
             'message' => 'Success',
+            'data' => $UserArray,
         ];
     
         header("HTTP/1.0 200 Success");

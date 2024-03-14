@@ -165,6 +165,38 @@ function getPackageDetails($conn, $pid)
 
 }
 
+function getTotalBookings($conn, $sid)
+{
+    $Query      = "select count(*) total_bookings from pre_bookings where student_id = '".$sid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["total_bookings"];
+        }
+
+    }
+}
+
+function getPendingBookings($conn, $sid)
+{
+    $Query      = "select count(*) pending_bookings from pre_bookings where student_id = '".$sid."' And status='pending'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["pending_bookings"];
+        }
+
+    }
+}
+
 function getTutorDetails($conn, $tid)
 {
     $Query      = "SELECT * FROM pre_users WHERE id = '".$tid."'";
