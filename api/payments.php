@@ -70,6 +70,22 @@ if($RequestMethod == "POST"){
         $AddNewUserQuery = "INSERT INTO pre_user_credit_transactions ($columns) VALUES ('$values')";
         $ExecuteAddNewUserQuery = mysqli_query($conn,$AddNewUserQuery) or die ("Error in query: $AddNewUserQuery. ".mysqli_error($conn));
 
+        $TotalCredits     = (int) $UserDetails["net_credits"];
+        $PurchasedCredits = (int) $PackageDetails["credits"];
+        $NetCredits       = $TotalCredits + $PurchasedCredits;
+
+        $UpdateArray                              = array();
+        $UpdateArray["net_credits"]               = $NetCredits;
+        $UpdateArray["last_updated"]              = date('Y-m-d H:i:s');
+
+        $UpdatProfile = "UPDATE pre_users SET ";
+        foreach($UpdateArray as $k => $v)
+        {
+            $UpdatProfile .= $k."='". $v."', ";
+        }
+        $UpdatProfile = rtrim($UpdatProfile, ", ");
+        $UpdatProfile .= " where id = $user_id";
+
         $Data =[
             'status' => 200,
             'message' => 'Success',
