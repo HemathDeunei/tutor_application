@@ -66,7 +66,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col-sm-12">
 				<div class="input-group ">
 					<label><?php echo get_languageword('your_meta_seo_keywords')?>:</label>
@@ -121,7 +121,7 @@
 					
 				</div>
 			</div>
-		</div>
+		</div> -->
 		
 		<div class="row">
 			<div class="col-sm-6 ">
@@ -222,7 +222,7 @@
 		</div>		
 		<div class="education add-more"><a href="javascript:void(0);"><i class="fa  fa-plus"></i> &nbsp;Add More</a></div>
 		-->
-		<div class="row">
+		<!-- <div class="row">
 		<div class="col-sm-6 ">
 			<div class="input-group ">
 				<label><?php echo get_languageword('How far are you willing to travel');?>?<?php echo get_languageword('in Km')?><sup>*</sup></label>
@@ -285,7 +285,7 @@
 				</div>
 
 			</div>
-		</div>
+		</div> -->
 		<button class="btn-link-dark dash-btn" name="submitbutt" type="Submit"><?php echo get_languageword('SAVE');?></button>
 
 	</form>
