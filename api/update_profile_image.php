@@ -19,7 +19,14 @@ if($RequestMethod == "POST")
     try {
         $user_id		    = addslashes(trim($_REQUEST['user_id']));
 
-       
+       if(isset($_FILES["profile_image"]["tmp_name"]))
+       {
+        echo "y";
+       }else{
+        echo "n";
+       }
+
+       exit;
 
         $uploadDirectory    = PROFILE_UPLOAD_PATH . '/';
         $uploadURL          = PROFILE;
