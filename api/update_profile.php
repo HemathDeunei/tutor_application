@@ -48,6 +48,8 @@ if($RequestMethod == "POST")
         $UpdatProfile = rtrim($UpdatProfile, ", ");
         $UpdatProfile .= " where id = $user_id";
 
+        $ExecuteQuery = mysqli_query($conn,$UpdatProfile) or die ("Error in query: $UpdatProfile. ".mysqli_error($conn));
+
 
         $Data =[
             'status' => 200,
