@@ -5,6 +5,10 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, 
 Access-Control-Request-Method, Access-Control-Allow-Origin");
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include "config.php";
 include "functions.php";
 
