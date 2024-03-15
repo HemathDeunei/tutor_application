@@ -11,7 +11,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $type		        = addslashes(ucfirst(trim($_REQUEST['type'])));
+        $type		        = addslashes(trim($_REQUEST['type']));
 
         $Query      = "SELECT * FROM pre_packages WHERE package_for = '".$type."' AND status = 'Active'";
 

@@ -12,7 +12,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
+        $user_id		    = addslashes(trim($_REQUEST['user_id']));
         
         $UserDetails    = getUserDetails($conn, $user_id);
 

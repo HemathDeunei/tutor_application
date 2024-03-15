@@ -11,9 +11,9 @@ include "config.php";
 $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
-    $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
-    $password		    = addslashes(ucfirst(trim($_REQUEST['password'])));
-    $new_password		= addslashes(ucfirst(trim($_REQUEST['new_password'])));
+    $user_id		    = addslashes(trim($_REQUEST['user_id']));
+    $password		    = addslashes(trim($_REQUEST['password']));
+    $new_password		= addslashes(trim($_REQUEST['new_password']));
 
     $CheckUserQuery        = "SELECT * FROM pre_users WHERE id = '$user_id'";
     $CheckUserQueryResults = mysqli_query($conn,$CheckUserQuery);

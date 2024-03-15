@@ -12,10 +12,10 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
-        $package_id		    = addslashes(ucfirst(trim($_REQUEST['package_id'])));
-        $transation_no		= addslashes(ucfirst(trim($_REQUEST['transaction_no'])));
-        $amount		        = addslashes(ucfirst(trim($_REQUEST['amount'])));
+        $user_id		    = addslashes(trim($_REQUEST['user_id']));
+        $package_id		    = addslashes(trim($_REQUEST['package_id']));
+        $transation_no		= addslashes(trim($_REQUEST['transaction_no']));
+        $amount		        = addslashes(trim($_REQUEST['amount']));
 
         $UserDetails    = getUserDetails($conn, $user_id);
         $PackageDetails = getPackageDetails($conn, $package_id);

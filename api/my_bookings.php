@@ -12,7 +12,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $student		        = addslashes(ucfirst(trim($_REQUEST['student'])));
+        $student		        = addslashes(trim($_REQUEST['student']));
 
         $Query      = "SELECT * FROM pre_bookings WHERE student_id = '".$student."' ORDER BY booking_id DESC";
 

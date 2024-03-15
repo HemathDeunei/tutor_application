@@ -12,7 +12,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $id		        = addslashes(ucfirst(trim($_REQUEST['id'])));
+        $id		        = addslashes(trim($_REQUEST['id']));
 
         $Query          = "SELECT * FROM pre_user_credit_transactions WHERE user_id = '".$id."' ORDER BY id DESC";
         $Results        = mysqli_query($conn,$Query);

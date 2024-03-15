@@ -13,16 +13,16 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 if($RequestMethod == "POST")
 {
     try {
-        $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
-        $first_name		    = addslashes(ucfirst(trim($_REQUEST['first_name'])));
-        $last_name		    = addslashes(ucfirst(trim($_REQUEST['last_name'])));
-        $email		        = addslashes(ucfirst(trim($_REQUEST['email'])));
-        $dob		        = addslashes(ucfirst(trim($_REQUEST['dob'])));
-        $gender		        = addslashes(ucfirst(trim($_REQUEST['gender'])));
-        $website		    = addslashes(ucfirst(trim($_REQUEST['website'])));
-        $profile		    = addslashes(ucfirst(trim($_REQUEST['profile'])));
-        $qualification	    = addslashes(ucfirst(trim($_REQUEST['qualification'])));
-        $profile_page_title = addslashes(ucfirst(trim($_REQUEST['profile_page_title'])));
+        $user_id		    = addslashes(trim($_REQUEST['user_id']));
+        $first_name		    = addslashes(trim($_REQUEST['first_name']));
+        $last_name		    = addslashes(trim($_REQUEST['last_name']));
+        $email		        = addslashes(trim($_REQUEST['email']));
+        $dob		        = addslashes(trim($_REQUEST['dob']));
+        $gender		        = addslashes(trim($_REQUEST['gender']));
+        $website		    = addslashes(trim($_REQUEST['website']));
+        $profile		    = addslashes(trim($_REQUEST['profile']));
+        $qualification	    = addslashes(trim($_REQUEST['qualification']));
+        $profile_page_title = addslashes(trim($_REQUEST['profile_page_title']));
 
 
         $UserArray                            = array();
