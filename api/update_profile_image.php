@@ -18,6 +18,10 @@ if($RequestMethod == "POST")
 {
     try {
         $user_id		    = addslashes(trim($_REQUEST['user_id']));
+
+        echo $user_id;
+        exit;
+
         $uploadDirectory    = PROFILE_UPLOAD_PATH . '/';
         $uploadURL          = PROFILE;
         $image_file_path    = "";
