@@ -18,11 +18,34 @@ if($RequestMethod == "POST")
 {
     try {
         $user_id		    = addslashes(ucfirst(trim($_REQUEST['user_id'])));
-        $image              = UploadImageFile('profile_image');
-       
+        $uploadDirectory    = PROFILE_UPLOAD_PATH . '/';
+        $uploadURL          = PROFILE;
+        $image_file_path    = "";
+
+        if (!file_exists($uploadDirectory)) {
+            mkdir($uploadDirectory, 0755, true);
+        }
+
+        $file_ext  =    pathinfo($_FILES["profile_image"]['name'], PATHINFO_EXTENSION);
+        $file_name = $_FILES["profile_image"]["name"];
+        $file_tmp  = $_FILES["profile_image"]["tmp_name"];
+        $ext       = pathinfo($file_name, PATHINFO_EXTENSION);
+
+        if (in_array($ext, ['jpeg', 'jpg', 'png', 'gif','PNG', 'jfif'])) {
+            $newFileName = uniqid("profile_") . "." . $file_ext;
+            $uploadPath = $uploadDirectory . $newFileName;
+
+            if (move_uploaded_file($file_tmp, $uploadPath)) {
+                // $image_file_path= $uploadURL . $newFileName;
+                $image_file_path = $newFileName;
+
+            }
+        }
+
+    
 
         $UserArray                            = array();
-        $UserArray["photo"]                   = $image;
+        $UserArray["photo"]                   = $image_file_path;
        
 
         $UpdatProfile = "UPDATE pre_users SET ";
