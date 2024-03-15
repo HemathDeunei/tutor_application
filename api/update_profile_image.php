@@ -1,6 +1,6 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-header('Content-Type: multipart/form-data;');
+header('Content-Type: multipart/form-data');
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, 
 Access-Control-Request-Method, Access-Control-Allow-Origin");
