@@ -5,9 +5,9 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, 
 Access-Control-Request-Method, Access-Control-Allow-Origin");
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 include "config.php";
 include "functions.php";
@@ -19,8 +19,7 @@ if($RequestMethod == "POST")
     try {
         $user_id		    = addslashes(trim($_REQUEST['user_id']));
 
-        echo $user_id;
-        exit;
+       
 
         $uploadDirectory    = PROFILE_UPLOAD_PATH . '/';
         $uploadURL          = PROFILE;
@@ -64,6 +63,7 @@ if($RequestMethod == "POST")
         $Data =[
             'status' => 200,
             'message' => 'Profile Image Updated',
+            'profile_image' => $image_file_path
         ];
     
         header("HTTP/1.0 200 Success");
