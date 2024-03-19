@@ -69,7 +69,7 @@ if($RequestMethod == "POST")
 
         }else{
             $Data =[
-                'status' => 200,
+                'status' => 300,
                 'message' => 'Profile Upload Failed',
                 'profile_image' => $image_file_path
             ];
