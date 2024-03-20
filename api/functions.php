@@ -199,6 +199,88 @@ function getPackageDetails($conn, $pid)
 
 }
 
+function getTutoringCourses($conn, $tid)
+{
+    $Query      = "select count(*) courses from pre_bookings where tutor_id=".$tid;
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["courses"];
+        }
+
+    }
+}
+
+function getTutorsRunningBookings($conn, $tid)
+{
+
+    $Query      = "select count(*) running_bookings from pre_bookings where tutor_id=".$tid." And status='running'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["running_bookings"];
+        }
+
+    }
+}
+
+function getTutorsCompletedBookings($conn, $tid)
+{
+    
+    $Query      = "select count(*) completed_bookings from pre_bookings where tutor_id=".$tid." And status='completed'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["completed_bookings"];
+        }
+
+    }
+}
+
+function getTutorsTotalBookings($conn, $tid)
+{
+    $Query      = "select count(*) total_bookings from pre_bookings where tutor_id = '".$tid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["total_bookings"];
+        }
+
+    }
+}
+
+function getTutorsPendingBookings($conn, $tid)
+{
+    $Query      = "select count(*) pending_bookings from pre_bookings where tutor_id = '".$tid."' And status='pending'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["pending_bookings"];
+        }
+
+    }
+}
+
 function getTotalBookings($conn, $sid)
 {
     $Query      = "select count(*) total_bookings from pre_bookings where student_id = '".$sid."'";
