@@ -84,7 +84,7 @@ if($RequestMethod == "POST"){
                         'message' => 'Incorrect Username or Password'
                     ];
                 
-                    header("HTTP/1.0 404 Incorrect Username or Password");
+                    header("HTTP/1.0 200 Incorrect Username or Password");
                     echo json_encode($Data);
                 } 
             }
@@ -94,7 +94,7 @@ if($RequestMethod == "POST"){
                 'message' => 'No User Found'
             ];
         
-            header("HTTP/1.0 404 No User Found");
+            header("HTTP/1.0 200 No User Found");
             echo json_encode($Data);
         }
 
