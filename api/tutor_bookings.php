@@ -30,10 +30,10 @@ if($RequestMethod == "POST"){
                     $data["tutor_id"]                = $record["tutor_id"];
                     $data["course_id"]               = $record["course_id"];
 
-                    $TutorDetails   = getTutorDetails($conn,$record["tutor_id"]);
-                    $CourseDetails  = getCourse($conn, $record["course_id"]);
+                    $StudentDetails   = getStudentDetails($conn,$record["student_id"]);
+                    $CourseDetails    = getCourse($conn, $record["course_id"]);
 
-                    $data["tutor_name"]              = $TutorDetails["username"];
+                    $data["student_name"]              = $StudentDetails["username"];
                     $data["course_name"]             = $CourseDetails["name"];
 
                     $data["duration"]                = $record["duration_value"]." ".$record["duration_type"];
