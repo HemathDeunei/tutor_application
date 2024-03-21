@@ -70,7 +70,7 @@
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'courses') echo 'class="active"';?>><a href="<?php echo URL_TUTOR_MANAGE_COURSES;?>"><?php echo get_languageword('courses');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_locations') echo 'class="active"';?>><a href="<?php echo URL_TUTOR_MANAGE_LOCATIONS;?>"><?php echo get_languageword('Locations');?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_teaching_types') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/manage-teaching-types"><?php echo get_languageword('Teaching Type');?></a></li>
-				
+				<li <?php if(isset($activesubmenu) && $activesubmenu == 'manage_privacy') echo 'class="active"';?>><a href="<?php echo base_url();?>tutor/manage-privacy"><?php echo get_languageword('Privacy');?></a></li>
 			</ul>
 		</div>
 		<!--/.panel-body -->
@@ -78,6 +78,7 @@
 	<!--/.panel-collapse -->
 </div>
 <!-- /.panel -->
+
 
 
 
