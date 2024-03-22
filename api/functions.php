@@ -412,7 +412,7 @@ function getSubLocations($conn, $pid, $tutor){
             $data["city_name"]        = $record["location_name"];
             $data["city_status"]      = getTutorLocations($conn, $record["id"], $tutor);
 
-            array_push($ListArray,$record["location_name"]);
+            array_push($ListArray,$data);
 
         }
 
