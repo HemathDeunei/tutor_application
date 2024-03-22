@@ -17,9 +17,7 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-        $course		= addslashes((trim($_REQUEST['course'])));
-        $tutor		= addslashes((trim($_REQUEST['tutor'])));
-
+      
         $data = getLocations($conn);
 
         $Data =[
