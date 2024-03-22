@@ -375,5 +375,46 @@ function getCourse($conn, $cid)
     }
 }
 
+function getLocations($conn){
+    $Query      = "SELECT * FROM pre_locations WHERE parent_location_id = '0'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
 
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            $data = array();
+            $data["state"]          = $record["location_name"];
+            $data["city"]           = getSubLocations($conn, $record["id"]);
+
+            array_push($ListArray,$data);
+
+        }
+
+    }
+
+    return $ListArray;
+
+}
+
+function getSubLocations($conn, $pid){
+    $Query      = "SELECT * FROM pre_locations WHERE parent_location_id = '".$pid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+    
+            array_push($ListArray,$record["location_name"]);
+
+        }
+
+    }
+
+    return $ListArray;
+
+}
 ?>
