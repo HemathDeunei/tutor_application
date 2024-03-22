@@ -438,4 +438,29 @@ function getTutorLocations($conn, $id, $tutor){
         return 'N';
     }
 }
+
+function getAddTutorLocations($conn, $id, $tutor)
+{
+    
+    $InsertArray                              = array();
+    $InsertArray["tutor_id"]                  = $tutor;
+    $InsertArray["location_id"]               = $id;
+    $InsertArray["status"]                    = "1";
+    $InsertArray["sort_order"]                = "0";
+    $InsertArray["created_at"]                = date('Y-m-d H:i:s');
+
+    $columns = implode(", ",array_keys($InsertArray));
+    $escaped_values = array_map(array($conn, 'real_escape_string'), array_values($InsertArray));
+    $values  = implode("', '", $escaped_values);
+    $Query = "INSERT INTO pre_tutor_locations ($columns) VALUES ('$values')";
+    $Results = mysqli_query($conn,$Query) or die ("Error in query: $Query. ".mysqli_error($conn));
+
+}
+
+function getRemoveTutorLocations($conn, $id, $tutor){
+    $Query      = "DELETE FROM pre_tutor_locations WHERE tutor_id = '".$tutor."' AND location_id = '".$id."'";
+    $Results    = mysqli_query($conn,$Query);
+    
+}
+
 ?>
