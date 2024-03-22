@@ -17,8 +17,9 @@ $RequestMethod = $_SERVER["REQUEST_METHOD"];
 
 if($RequestMethod == "POST"){
     try {
-      
-        $data = getLocations($conn);
+        $tutor		= addslashes((trim($_REQUEST['tutor_id'])));
+
+        $data       = getLocations($conn, $tutor);
 
         $Data =[
             'status' => 200,
