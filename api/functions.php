@@ -398,6 +398,30 @@ function getLocations($conn, $tutor){
 
 }
 
+function getSubLocations($conn, $pid, $tutor){
+    $Query      = "SELECT * FROM pre_locations WHERE parent_location_id = '".$pid."'";
+    $Results    = mysqli_query($conn,$Query);
+    $ListArray  = array();
+
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            $data = array();
+            $data["city_id"]          = $record["id"];
+            $data["city_name"]        = $record["location_name"];
+            $data["city_status"]      = getTutorLocations($conn, $record["id"], $tutor);
+
+            array_push($ListArray,$record["location_name"]);
+
+        }
+
+    }
+
+    return $ListArray;
+
+}
+
 function getTutorLocations($conn, $id, $tutor){
     $Query      = "SELECT * FROM pre_tutor_locations WHERE tutor_id = '".$tutor."' AND location_id = '".$id."'";
     $Results    = mysqli_query($conn,$Query);
@@ -413,29 +437,5 @@ function getTutorLocations($conn, $id, $tutor){
     }else{
         return 'N';
     }
-}
-
-function getSubLocations($conn, $pid, $tutor){
-    $Query      = "SELECT * FROM pre_locations WHERE parent_location_id = '".$pid."'";
-    $Results    = mysqli_query($conn,$Query);
-    $ListArray  = array();
-
-    if (mysqli_num_rows($Results) > 0) 
-    {
-        while($record = mysqli_fetch_assoc($Results)) 
-        {
-            $data = array();
-            $data["city_id"]          = $record["id"];
-            $data["city_name"]        = $record["location_name"];
-            $data["city_status"]      = getTutorLocations($conn,$$record["id"],$tutor);
-
-            array_push($ListArray,$record["location_name"]);
-
-        }
-
-    }
-
-    return $ListArray;
-
 }
 ?>
