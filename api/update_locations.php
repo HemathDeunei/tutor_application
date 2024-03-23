@@ -23,6 +23,8 @@ if($RequestMethod == "POST"){
 
         if($action == "add"){
 
+            getAddTutorLocations($conn, $location, $tutor);
+            
             $Data =[
                 'status' => 200,
                 'message' => 'Location added successfully.',              
