@@ -61,7 +61,7 @@ if($RequestMethod == "POST")
             $Data =[
                 'status' => 200,
                 'message' => 'Profile Image Updated',
-                'profile_image' => $image_file_path
+                'profile_image' => PROFILE.$image_file_path
             ];
         
             header("HTTP/1.0 200 Success");
