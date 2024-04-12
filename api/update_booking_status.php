@@ -16,58 +16,34 @@ if($RequestMethod == "POST"){
         $user_id	= addslashes(trim($_REQUEST['user_id']));
         $type		= addslashes(trim($_REQUEST['type']));
         $status		= addslashes(trim($_REQUEST['status']));
+        $desc		= addslashes(trim($_REQUEST['description']));
 
-        $Query      = "SELECT * FROM pre_tutor_courses WHERE tutor_id = '".$tutor."' ORDER BY sort_order";
+        $previous_status       = getBookingStatus($conn,$id);
 
-        $Results    = mysqli_query($conn,$Query);
-        $ListArray  = array();
+        $UserArray                            = array();
+        $UserArray["prev_status"]             = $previous_status;
+        $UserArray["status"]                  = $status;
+        $UserArray["status_desc"]             = $desc;
+        $UserArray["updated_at"]              = date('Y-m-d H:i:s');
+        $UserArray["updated_by"]              = $user_id;
 
-        if($Results){
-            if (mysqli_num_rows($Results) > 0) 
-            {
-                while($record = mysqli_fetch_assoc($Results)) 
-                {
-                    $data = array();
-                    $data["id"]                     = $record["id"];
-                    $data["course_id"]              = $record["course_id"];
-                    $data["tutor_id"]               = $record["tutor_id"];
-
-                    $CourseDetails          = getCourse($conn, $record["course_id"]);
-
-                    $data["image"]          = COURSES . $CourseDetails["image"];
-                    $data["name"]           = $CourseDetails["name"];
-
-                    array_push($ListArray,$data);
-
-                }
-
-                $Data =[
-                    'status' => 200,
-                    'message' => 'Success',
-                    'data' => $ListArray,
-                ];
-            
-                header("HTTP/1.0 200 Success");
-                echo json_encode($Data);
-            }else{
-                $Data =[
-                    'status' => 404,
-                    'message' => 'No Details Found'
-                ];
-            
-                header("HTTP/1.0 404 No Details Found");
-                echo json_encode($Data);
-            }
-
-        }else{
-            $Data =[
-                'status' => 500,
-                'message' => 'Internal Server Error'
-            ];
-        
-            header("HTTP/1.0 500 Internal Server Error");
-            echo json_encode($Data);
+        $UpdatProfile = "UPDATE pre_bookings SET ";
+        foreach($UserArray as $k => $v)
+        {
+            $UpdatProfile .= $k."='". $v."', ";
         }
+        $UpdatProfile = rtrim($UpdatProfile, ", ");
+        $UpdatProfile .= " where booking_id = $id";
+
+        $ExecuteQuery = mysqli_query($conn,$UpdatProfile) or die ("Error in query: $UpdatProfile. ".mysqli_error($conn));
+
+        $Data =[
+            'status' => 200,
+            'message' => 'Status Updated'
+        ];
+    
+        header("HTTP/1.0 200 success");
+        echo json_encode($Data);
 
     } catch (Exception $ex) {
         $Data =[
