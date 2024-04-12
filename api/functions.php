@@ -463,4 +463,17 @@ function getRemoveTutorLocations($conn, $id, $tutor){
     
 }
 
+function getBookingStatus($conn, $id){
+    $Query      = "SELECT * FROM pre_bookings WHERE booking_id = '".$id."'";
+    $Results    = mysqli_query($conn,$Query);
+    
+    if (mysqli_num_rows($Results) > 0) 
+    {
+        while($record = mysqli_fetch_assoc($Results)) 
+        {
+            return $record["status"];
+        }
+    }
+}
+
 ?>
