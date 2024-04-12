@@ -29,7 +29,6 @@ if($RequestMethod == "POST"){
                 array_push($StatusArray,"running");
                 array_push($StatusArray,"cancelled_before_course_started");
             }else if($status == "running"){
-                array_push($StatusArray,"running");
                 array_push($StatusArray,"cancelled_when_course_running");
             }else if($status == "completed"){
                 array_push($StatusArray,"closed");
