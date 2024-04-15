@@ -73,7 +73,7 @@ if($RequestMethod == "POST"){
                     'message' => 'No Tutor Found'
                 ];
             
-                header("HTTP/1.0 300 No Tutor Found");
+                header("HTTP/1.0 200 No Tutor Found");
                 echo json_encode($Data);
             }
 
