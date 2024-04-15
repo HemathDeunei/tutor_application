@@ -63,7 +63,7 @@ if($RequestMethod == "POST"){
 
                         $Data =[
                             'status' => 200,
-                            'message' => 'Success',
+                            'message' => 'Login Success',
                             'user_logged_in' => 'true',
                             'user_id' => $record["id"],
                             'user_name' => $record["username"],
