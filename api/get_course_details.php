@@ -28,6 +28,7 @@ if($RequestMethod == "POST"){
             'tutor_id' => $data["tutor_id"],
             'course_id' => $data["course_id"],
             'time_slots' => $data["time_slots"],
+            'content' => $data["content"],
             'mode' => $data["mode"],
             'credits' => $data["credits"],
             'duration' => $data["duration"],
