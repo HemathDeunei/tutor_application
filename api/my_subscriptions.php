@@ -49,7 +49,7 @@ if($RequestMethod == "POST"){
                     'message' => 'No Details Found'
                 ];
             
-                header("HTTP/1.0 404 No Details Found");
+                header("HTTP/1.0 200 No Details Found");
                 echo json_encode($Data);
             }
 
@@ -59,7 +59,7 @@ if($RequestMethod == "POST"){
                 'message' => 'Internal Server Error'
             ];
         
-            header("HTTP/1.0 500 Internal Server Error");
+            header("HTTP/1.0 200 Internal Server Error");
             echo json_encode($Data);
         }
 
